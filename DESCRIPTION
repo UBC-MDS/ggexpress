@@ -7,6 +7,11 @@ Authors@R:
            role = c("aut", "cre"),
            email = "first.last@example.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
+    person(given = "Wenjiao",
+           family = "Zou",
+           role = c("aut", "cre"),
+           email = "zouwenjiao@gmail.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: This package provides tools for users to immediately plot their data and obtain useful informationm that will aid in machine learning projects.
 License: MIT + file LICENSE
 Encoding: UTF-8
