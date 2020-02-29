@@ -13,7 +13,7 @@ You can contribute in many ways:
 
 ### Report Bugs
 
-Report bugs at https://github.com/aromatic-toast/altairexpress/issues.
+Report bugs at https://github.com/UBC-MDS/ggexpress/issues.
 
 If you are reporting a bug, please include:
 
@@ -68,13 +68,12 @@ Ready to contribute? Here's how to set up `ggexpress` for local development.
 
    	Now you can make your changes locally.
    	
-4. Load the devtools package, which is the public face of a set of packages that support various aspects of package development.
-
+4. Load the devtools package, which is the public face of a set of packages that support various aspects of package development：
   ```
   library(devtools)
   ```
 For presentation purposes only, we use fs, for filesystem work, and the tidyverse, for light data wrangling.
-
+  
   ```
   library(tidyverse)
   library(fs)
@@ -83,19 +82,19 @@ For presentation purposes only, we use fs, for filesystem work, and the tidyvers
 
 6. When you're done making changes, make sure that all the moving parts of the package still work by `check()`.
 
-  ```
-  check()
-  ```
+    ```
+    check()
+    ```
 
 7. Don't forget to update the tests for the function in the file `tests/testthat/test-FUNCTION_NAME.R`.
 
-4. When you're done updating the test file, check that your changes pass the tests by running `test()`
+8. When you're done updating the test file, check that your changes pass the tests by running `test()`
 
 	```
 	test()
 	```
 
-6. Commit your changes and push your branch to GitHub:
+9. Commit your changes and push your branch to GitHub:
 
 	```
 	git add .
@@ -103,7 +102,7 @@ For presentation purposes only, we use fs, for filesystem work, and the tidyvers
 	git push origin name-of-your-bugfix-or-feature
 	```
 
-7. Submit a pull request through the GitHub website.
+10. Submit a pull request through the GitHub website.
 
 ## Pull Request Guidelines
 
