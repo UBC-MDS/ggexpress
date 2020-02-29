@@ -5,7 +5,7 @@ R package that creates basic EDA graphics in ggplot2 with ease.
 ### Installation:
 
 ```
-TODO
+install.packages('ggexpress')
 ```
 
 ### Summary Overview
@@ -24,7 +24,11 @@ TODO
 
 ### Dependencies
 
-TODO
+[ggplot2](https://ggplot2.tidyverse.org)
+<br>
+[stats](https://www.rdocumentation.org/packages/stats/versions/3.6.2)
+<br>
+[tidyr](https://tidyr.tidyverse.org)
 
 ### Usage
 
