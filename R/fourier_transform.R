@@ -12,7 +12,7 @@
 #' fourier_transform(data = my_data,
 #'                   time_col = 'time_series',
 #'                   data_col = 'signal')
-
+#'
 
 fourier_transform <- function(data, time_col, data_col) {
   print('compilation success!')
