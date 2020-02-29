@@ -1,6 +1,6 @@
 #' Make a Fourier transform plot of the data specified in the 'time_col' column using ggplot2
 #'
-#' @param data dataframe containing all necessary information
+#' @param data DataFrame containing all necessary information
 #' @param time_col string containing the time data column corresponding to the data we
 #'                 want to apply Fourier transform to
 #' @param data_col string containing the name of the column we want to apply Fourier transform to
