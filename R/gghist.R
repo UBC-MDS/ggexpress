@@ -1,6 +1,6 @@
 #' Make a ggplot histogram
 #'
-#' Creates a ggplot histogram indicating the position of the mean and median and displays the standard deviation.
+#' Creates a ggplot histogram that indicates the position of the mean and median and displays the standard deviation.
 #'
 #' @param data A tibble or dataframe.
 #' @param variable The column name inside data that will be made into a histogram.
