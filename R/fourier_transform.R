@@ -5,7 +5,7 @@
 #'                 want to apply Fourier transform to
 #' @param data_col string containing the name of the column we want to apply Fourier transform to
 #'
-#' @return Produces a ggplot2 line plot of frequency vs amplitude of the data inputed
+#' @returns a ggplot2 line plot of frequency vs amplitude of the data inputed
 #' @export
 #'
 #' @examples
