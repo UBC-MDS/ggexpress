@@ -1,4 +1,4 @@
-#' Make a Fourier transform plot of the data specified in the 'data_col' column using ggplot2
+#' Creates a Fourier transform plot of the data specified in the 'data_col' column using ggplot2
 #'
 #' @param data DataFrame containing all necessary information
 #' @param time_col string containing the time data column corresponding to the data we
