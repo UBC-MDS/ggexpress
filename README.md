@@ -27,6 +27,7 @@ install.packages('ggexpress')
 [ggplot2](https://ggplot2.tidyverse.org)
 <br>
 [stats](https://www.rdocumentation.org/packages/stats/versions/3.6.2)
+<br>
 
 ### Usage
 
