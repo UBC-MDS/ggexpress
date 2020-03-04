@@ -2,3 +2,6 @@
 
 export(f)
 export(gghist)
+export(scatter_express)
+export(ts_plot)
+
