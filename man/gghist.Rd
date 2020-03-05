@@ -15,7 +15,7 @@ gghist(data, variable)
 Produces a ggplot histogram with mean, median and standard deviation indicated on the plot.
 }
 \description{
-Creates a ggplot histogram indicating the position of the mean and median and displays the standard deviation.
+Creates a ggplot histogram that indicates the position of the mean and median and displays the standard deviation.
 }
 \examples{
 gghist(iris, Sepal.Length)
