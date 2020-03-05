@@ -4,21 +4,17 @@
 \alias{ts_plot}
 \title{Time series decomposition and plot}
 \usage{
-ts_plot(data, col, type, frequency)
+ts_plot(data, col, frequency)
 }
 \arguments{
 \item{data}{str: the path of the csv file}
 
 \item{col}{str: the column to be analyzed}
 
-\item{type}{str: "regular" or "irregular"
-"regular": time series with regular time intervals
-"irregular": time series with irregular time intervals}
-
 \item{frequency}{int: the desired time interval}
 }
 \value{
-a figure with 4 subplots
+ggplot Object
 }
 \description{
 Convert csv file into a time series object, decompose it into in trend, seasonality/cyclicity
