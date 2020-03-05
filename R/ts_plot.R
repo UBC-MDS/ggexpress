@@ -1,5 +1,6 @@
 library(ggplot2)
 library(dplyr)
+library(forecast)
 #' Time series decomposition and plot
 #'
 #' Convert csv file into a time series object, decompose it into in trend, seasonality/cyclicity
@@ -18,12 +19,12 @@ ts_plot <- function(data, col, frequency){
   ts <- ts(df[[col]], frequency = frequency)
 
   if (frequency == 1){
-    plt <- ggplot2::autoplot(ts, main = "Time series data", xlab="Time", ylab = col)
+    plt <- forecast::autoplot(ts, main = "Time series data", xlab="Time", ylab = col)
   }
   else {
     plt <- ts %>%
       decompose() %>%
-      ggplot2::autoplot(main = "Decomposed Time series data", xlab="Time", ylab = col)
+        forecast::autoplot(main = "Decomposed Time series data", xlab="Time", ylab = col)
   }
   return(plt)
 }
