@@ -12,3 +12,14 @@ test_that("The plot has correct number of layers", {
   expect_equal(length(test_plt2$layers), 1)
 
 })
+
+
+test_that("The time series data has regular time interval", {
+  expect_error(ts_plot("https://raw.github.ubc.ca/MDS-2019-20/DSCI_574_spat-temp-mod_students/master/labs/release/lab1/data/ts6_shorelines.csv?token=AAAAOM2VTEDBLBFBZPV7UW26NHKOU",
+                       "shoreline", 12))
+})
+
+test_that("The frequency users input coordinates with the data", {
+  expect_error(ts_plot("https://raw.github.ubc.ca/MDS-2019-20/DSCI_574_spat-temp-mod_students/master/labs/release/lab1/data/ts4_jjshares.csv?token=AAAAOMZQBS5IDU4Q6K3RBXS6NG7NM",
+                       "earnings", 5))
+})

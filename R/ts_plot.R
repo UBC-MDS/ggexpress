@@ -17,6 +17,14 @@ ts_plot <- function(data, col, frequency){
   df <- readr::read_csv(data)
   ts <- ts(df[[col]], frequency = frequency)
 
+  if (time(ts)[2] - time(ts)[1] != time(ts)[3] - time(ts)[2]){
+    stop("This time series is irregular.")
+  }
+
+  if (time(ts)[2] - time(ts)[1] != 1/frequency){
+    stop("The frequency is wrong.")
+  }
+
   if (frequency == 1){
     plt <- forecast::autoplot(ts, main = "Time series data", xlab="Time", ylab = col)
   }
