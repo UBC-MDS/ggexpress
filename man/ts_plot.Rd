@@ -21,5 +21,5 @@ Convert csv file into a time series object, decompose it into in trend, seasonal
 and noise/remainder/error and plot the raw data and the decomposed components.
 }
 \examples{
-ts_plot("https://raw.github.ubc.ca/MDS-2019-20/DSCI_574_lab1_puddingz/master/data/ts4_jjshares.csv?token=AAAAOM22MPFSPEHAUMEANOS6NGM5A", "earnings", 4)
+ts_plot("~/Desktop/ts4_jjshares.csv", "earnings", 4)
 }

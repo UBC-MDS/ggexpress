@@ -1,5 +1,4 @@
 library(ggplot2)
-library(dplyr)
 library(forecast)
 #' Time series decomposition and plot
 #'
@@ -13,7 +12,7 @@ library(forecast)
 #' @return ggplot Object
 #' @export
 #' @examples
-#' ts_plot("https://raw.github.ubc.ca/MDS-2019-20/DSCI_574_lab1_puddingz/master/data/ts4_jjshares.csv?token=AAAAOM22MPFSPEHAUMEANOS6NGM5A", "earnings", 4)
+#' ts_plot("~/Desktop/ts4_jjshares.csv", "earnings", 4)
 ts_plot <- function(data, col, frequency){
   df <- readr::read_csv(data)
   ts <- ts(df[[col]], frequency = frequency)
@@ -22,9 +21,8 @@ ts_plot <- function(data, col, frequency){
     plt <- forecast::autoplot(ts, main = "Time series data", xlab="Time", ylab = col)
   }
   else {
-    plt <- ts %>%
-      decompose() %>%
-        forecast::autoplot(main = "Decomposed Time series data", xlab="Time", ylab = col)
+    decomposed <- stats::decompose(ts)
+    plt <- forecast::autoplot(decomposed, main = "Decomposed Time series data", xlab="Time", ylab = col)
   }
   return(plt)
 }

@@ -21,4 +21,5 @@ RoxygenNote: 7.0.2
 Imports: 
     dplyr,
     ggplot2,
-    rlang
+    rlang,
+    forecast
