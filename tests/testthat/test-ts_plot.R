@@ -1,25 +1,25 @@
-require(testthat)
-require(ggplot2)
-require(forecast)
+library(testthat)
+library(ggplot2)
+library(forecast)
 
 test_that("The plot has correct number of layers", {
   test_plt1 <- ts_plot("https://raw.github.ubc.ca/MDS-2019-20/DSCI_574_spat-temp-mod_students/master/labs/release/lab1/data/ts4_jjshares.csv?token=AAAAOMZQBS5IDU4Q6K3RBXS6NG7NM",
                       "earnings", 4)
-  expect_equal(length(test_plt1$layers), 4)
+  testthat::expect_equal(length(test_plt1$layers), 4)
 
   test_plt2 <- ts_plot("https://raw.github.ubc.ca/MDS-2019-20/DSCI_574_spat-temp-mod_students/master/labs/release/lab1/data/ts1_globaltemp.csv?token=AAAAOM4GFOSICJVSVP2YUP26NG7QE",
                        "temp", 1)
-  expect_equal(length(test_plt2$layers), 1)
+  testthat::expect_equal(length(test_plt2$layers), 1)
 
 })
 
 
 test_that("The time series data has regular time interval", {
-  expect_error(ts_plot("https://raw.github.ubc.ca/MDS-2019-20/DSCI_574_spat-temp-mod_students/master/labs/release/lab1/data/ts6_shorelines.csv?token=AAAAOM2VTEDBLBFBZPV7UW26NHKOU",
+  testthat::expect_error(ts_plot("https://raw.github.ubc.ca/MDS-2019-20/DSCI_574_spat-temp-mod_students/master/labs/release/lab1/data/ts6_shorelines.csv?token=AAAAOM2VTEDBLBFBZPV7UW26NHKOU",
                        "shoreline", 12))
 })
 
 test_that("The frequency users input coordinates with the data", {
-  expect_error(ts_plot("https://raw.github.ubc.ca/MDS-2019-20/DSCI_574_spat-temp-mod_students/master/labs/release/lab1/data/ts4_jjshares.csv?token=AAAAOMZQBS5IDU4Q6K3RBXS6NG7NM",
+  testthat::expect_error(ts_plot("https://raw.github.ubc.ca/MDS-2019-20/DSCI_574_spat-temp-mod_students/master/labs/release/lab1/data/ts4_jjshares.csv?token=AAAAOMZQBS5IDU4Q6K3RBXS6NG7NM",
                        "earnings", 5))
 })
