@@ -6,7 +6,11 @@
 #' @param variable The column name inside data that will be made into a histogram.
 #'
 #' @return Produces a ggplot histogram with mean, median and standard deviation indicated on the plot.
+#'
 #' @export
+#' @importFrom ggplot2 geom_histogram
+#' @importFrom ggplot2 geom_vline
+#' @importFrom ggplot2 annotate
 #'
 #' @examples
 #' gghist(iris, Sepal.Length)
@@ -21,10 +25,10 @@ gghist <- function(data, variable) {
   }
 
   # extract the variable
-  v <- select({{data}}, {{variable}}) %>% pull()
+  v <- dplyr::select({{data}}, {{variable}}) %>% pull()
 
   # make a frequency table of the variable
-  variable_freq <- as_tibble(as.data.frame(table(v)))
+  variable_freq <- dplyr::as_tibble(as.data.frame(table(v)))
 
   # get the variable statistics
   variable_mean <- mean(v)
@@ -59,7 +63,6 @@ gghist <- function(data, variable) {
              y = (y_max*0.9 - 2),
              label = paste("Standard Deviation is:", round(variable_sd, 2)),
              color = "black")
-
 
 }
 
