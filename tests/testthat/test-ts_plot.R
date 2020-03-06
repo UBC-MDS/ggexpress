@@ -1,7 +1,3 @@
-library(testthat)
-library(ggplot2)
-library(forecast)
-
 test_that("The plot has correct number of layers", {
   test_plt1 <- ts_plot("https://raw.github.ubc.ca/MDS-2019-20/DSCI_574_spat-temp-mod_students/master/labs/release/lab1/data/ts4_jjshares.csv?token=AAAAOMZQBS5IDU4Q6K3RBXS6NG7NM",
                       "earnings", 4)

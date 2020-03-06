@@ -1,5 +1,3 @@
-library(ggplot2)
-library(forecast)
 #' Time series decomposition and plot
 #'
 #' Convert csv file into a time series object, decompose it into in trend, seasonality/cyclicity
@@ -14,17 +12,45 @@ library(forecast)
 #' @examples
 #' ts_plot("~/Desktop/ts4_jjshares.csv", "earnings", 4)
 ts_plot <- function(data, col, frequency){
+
+  # basic check of input
+  if(length(readr::read_csv(data)) != 2){
+    stop("The type pf the input data must be a csv file")
+  }
+
+  if(typeof(col) != 'character') {
+    stop("The column name should be a string")
+  }
+
+  if(frequency %in% c(1, 4, 12, 52) == FALSE) {
+    stop("The time series should be annual/quarterly/monthly/weekly")
+  }
+
+  # read the data into a dataframe
   df <- readr::read_csv(data)
+
+  # check the input further
+  if (c(col) %in% colnames(df) == FALSE){
+    stop("The column names were not found")
+  }
+
+  if (typeof(df[[col]]) != "double"){
+    stop("The column selected is not suitable for time series analysis")
+  }
+
+  # convert csv file into a time series object
   ts <- ts(df[[col]], frequency = frequency)
 
+  # check the time series object
   if (time(ts)[2] - time(ts)[1] != time(ts)[3] - time(ts)[2]){
     stop("This time series is irregular.")
   }
 
   if (time(ts)[2] - time(ts)[1] != 1/frequency){
-    stop("The frequency is wrong.")
+    stop("The frequency disagrees with the original data.")
   }
 
+  # plot the raw data and the decomposed components
   if (frequency == 1){
     plt <- forecast::autoplot(ts, main = "Time series data", xlab="Time", ylab = col)
   }
