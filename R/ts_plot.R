@@ -18,13 +18,22 @@ ts_plot <- function(data, col, frequency){
     stop("The type of the input data must be a csv file")
   }
 
+  if(typeof(data) != 'character'){
+    stop("The path of the csv file should be a string")
+  }
+
   if(typeof(col) != 'character') {
     stop("The column name should be a string")
   }
 
-  if(frequency %in% c(1, 4, 12, 52) == FALSE) {
-    stop("The time series should be annual/quarterly/monthly/weekly")
+  if(typeof(frequency) != "double") {
+    stop("The frequency of time series should be an integer")
   }
+
+  if(frequency %in% c(1, 4, 12, 52) == FALSE) {
+    stop("The frequency of time series should be annual/quarterly/monthly/weekly")
+  }
+
 
   # read the data into a dataframe
   df <- readr::read_csv(data)
