@@ -22,7 +22,6 @@ Imports:
     dplyr,
     ggplot2,
     rlang,
-    forecast,
-    ggexpress
+    forecast
 Suggests: 
     testthat (>= 2.1.0)

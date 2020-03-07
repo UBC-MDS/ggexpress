@@ -1,3 +1,4 @@
+library(testthat)
 #' Tests the time series plot function to make sure output is rendered correctly
 #' or the function will fail with an error message and problem.
 #'
