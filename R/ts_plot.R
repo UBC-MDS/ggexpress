@@ -61,7 +61,7 @@ ts_plot <- function(data, col, frequency){
   }
   else {
     decomposed <- stats::decompose(ts)
-    plt <- forecast::autoplot(decomposed, main = "Decomposed Time series data", xlab="Time", ylab = col)
+    plt <- forecast::autoplot(decomposed, main = "Decomposed Time-Series Data", xlab="Time", ylab = col)
   }
   return(plt)
 }
