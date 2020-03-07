@@ -14,9 +14,6 @@ want to apply Fourier transform to}
 
 \item{data_col}{string containing the name of the column we want to apply Fourier transform to}
 }
-\value{
-a ggplot2 line plot of frequency vs amplitude of the data inputed
-}
 \description{
 Creates a Fourier transform plot of the data specified in the 'data_col' column using ggplot2
 }
