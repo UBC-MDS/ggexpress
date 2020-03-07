@@ -1,6 +1,6 @@
 #' Time series decomposition and plot
 #'
-#' Convert csv file into a time series object, decompose it into in trend, seasonality/cyclicity
+#' Convert csv file into a time series object, decompose it into trend, seasonality/cyclicity
 #' and noise/remainder/error and plot the raw data and the decomposed components.
 #'
 #' @param data str: the path of the csv file
