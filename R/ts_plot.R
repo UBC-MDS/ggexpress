@@ -14,7 +14,7 @@
 ts_plot <- function(data, col, frequency){
 
   # basic check of input
-  if(length(readr::read_csv(data)) != 2){
+  if(length(readr::read_csv(data)) == 1){
     stop("The type of the input data must be a csv file")
   }
 
