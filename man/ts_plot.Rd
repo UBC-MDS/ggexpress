@@ -11,7 +11,7 @@ ts_plot(data, col, frequency)
 
 \item{col}{str: the column to be analyzed}
 
-\item{frequency}{int: the desired time interval}
+\item{frequency}{int: should choose from {1, 4, 12, 52}}
 }
 \value{
 ggplot Object
@@ -19,6 +19,7 @@ ggplot Object
 \description{
 Convert csv file into a time series object, decompose it into trend, seasonality/cyclicity
 and noise/remainder/error and plot the raw data and the decomposed components.
+If the time series can't be decomposed, the function will just return the line chart of the raw data.
 }
 \examples{
 ts_plot("~/Desktop/ts4_jjshares.csv", "earnings", 4)
