@@ -31,11 +31,23 @@ test_ts_plot <- function() {
                          "earnings", 4),
     regexp = "The type of the input data must be a csv file")
   })
+  
+  test_that("Corresponding error message should be expected if the data path argument is not a string.", {
+    expect_error(ts_plot(123,
+                         "earnings", 4),
+                 regexp = "The path of the csv file should be a string")
+  })
 
   test_that("Corresponding error message should be expected if the col argument is not a string", {
     expect_error(ts_plot("https://raw.github.ubc.ca/MDS-2019-20/DSCI_574_spat-temp-mod_students/master/labs/release/lab1/data/ts4_jjshares.csv?token=AAAAOMZQBS5IDU4Q6K3RBXS6NG7NM",
                          2, 4),
                  regexp = "The column name should be a string")
+  })
+  
+  test_that("Corresponding error message should be expected if the frequency argument is not an integer", {
+    expect_error(ts_plot("https://raw.github.ubc.ca/MDS-2019-20/DSCI_574_spat-temp-mod_students/master/labs/release/lab1/data/ts4_jjshares.csv?token=AAAAOMZQBS5IDU4Q6K3RBXS6NG7NM",
+                         "earnings", "4"),
+                 regexp = "The frequency of time series should be an integer")
   })
 
   test_that("Corresponding error message should be expected if the frequency argument is not proper", {
