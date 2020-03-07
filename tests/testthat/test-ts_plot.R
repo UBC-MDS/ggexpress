@@ -1,16 +1,23 @@
-library(ggplot2)
-
-data1 <- "https://raw.github.ubc.ca/MDS-2019-20/DSCI_574_spat-temp-mod_students/master/labs/release/lab1/data/ts4_jjshares.csv?token=AAAAOMZQBS5IDU4Q6K3RBXS6NG7NM"
-data2 <- "https://raw.github.ubc.ca/MDS-2019-20/DSCI_574_spat-temp-mod_students/master/labs/release/lab1/data/ts1_globaltemp.csv?token=AAAAOM4GFOSICJVSVP2YUP26NG7QE"
-
-test_data_1 <- ts_plot(data1, "earnings", 4)
-
-test_data_2 <- ts_plot(data2, "temp", 1)
+#' Tests the time series plot function to make sure output is rendered correctly
+#' or the function will fail with an error message and problem.
+#'
+#' @return None. the function will not throw an error
+#' if the tests pass.
+#'
+#' @examples
+#' test_ts_plot()
 
 test_ts_plot <- function() {
-
+  # import helper data
+  data1 <- "https://raw.github.ubc.ca/MDS-2019-20/DSCI_574_spat-temp-mod_students/master/labs/release/lab1/data/ts4_jjshares.csv?token=AAAAOMZQBS5IDU4Q6K3RBXS6NG7NM"
+  data2 <- "https://raw.github.ubc.ca/MDS-2019-20/DSCI_574_spat-temp-mod_students/master/labs/release/lab1/data/ts1_globaltemp.csv?token=AAAAOM4GFOSICJVSVP2YUP26NG7QE"
+  
+  test_data_1 <- ts_plot(data1, "earnings", 4)
+  test_data_2 <- ts_plot(data2, "temp", 1)
+  
+  # tests part
   test_that("The returned plot should be a ggplot object.", {
-    expect_true(is.ggplot(test_data_1))
+    expect_true(ggplot2::is.ggplot(test_data_1))
   })
 
   test_that("The plot for annual time series should contain only 1 line chart", {
