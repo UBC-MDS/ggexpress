@@ -15,7 +15,7 @@ ts_plot <- function(data, col, frequency){
 
   # basic check of input
   if(length(readr::read_csv(data)) != 2){
-    stop("The type pf the input data must be a csv file")
+    stop("The type of the input data must be a csv file")
   }
 
   if(typeof(col) != 'character') {
@@ -44,10 +44,6 @@ ts_plot <- function(data, col, frequency){
   # check the time series object
   if (time(ts)[2] - time(ts)[1] != time(ts)[3] - time(ts)[2]){
     stop("This time series is irregular.")
-  }
-
-  if (time(ts)[2] - time(ts)[1] != 1/frequency){
-    stop("The frequency disagrees with the original data.")
   }
 
   # plot the raw data and the decomposed components
