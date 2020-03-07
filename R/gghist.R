@@ -27,8 +27,6 @@ gghist <- function(data, variable) {
   # extract the variable
   v <- dplyr::select({{data}}, {{variable}}) %>% pull()
 
-  # make a frequency table of the variable
-  variable_freq <- dplyr::as_tibble(as.data.frame(table(v)))
 
   # get the variable statistics
   variable_mean <- mean(v)
@@ -38,16 +36,22 @@ gghist <- function(data, variable) {
   # set the x-axis position for annotations
   annotation_x <- max(v)*0.9
 
-  # get the max frequency
-  y_max <- max(v)
 
-
-  # ggplot histogram with annotations
+  # make based ggplot histogram
   {{data}} %>%
     ggplot(aes(x = {{variable}})) +
     geom_histogram() +
     geom_vline(xintercept = variable_mean, color = "red") +
-    geom_vline(xintercept = variable_median, color = "blue") +
+    geom_vline(xintercept = variable_median, color = "blue")
+
+  # build the plot to get access to plot components
+  build <- ggplot_build(p1)
+
+  # get the max frequency in the plot
+  y_max <- build$layout$panel_scales_y[[1]]$range$range[2]
+
+  # add the annotations to the plot
+  p1 +
     annotate(geom = "text",
              x = annotation_x,
              y = y_max*0.9,
@@ -55,12 +59,12 @@ gghist <- function(data, variable) {
              color = "red") +
     annotate(geom = "text",
              x = annotation_x,
-             y = (y_max*0.9 - 1),
+             y = (y_max*0.8),
              label = paste("Median is:", round(variable_median, 2)),
              color = "blue") +
     annotate(geom = "text",
              x = annotation_x,
-             y = (y_max*0.9 - 2),
+             y = (y_max*0.7),
              label = paste("Standard Deviation is:", round(variable_sd, 2)),
              color = "black")
 
