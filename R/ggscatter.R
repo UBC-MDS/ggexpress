@@ -31,12 +31,12 @@ scatter_express <- function(df, xval = NA, yval = NA, x_transform = FALSE, y_tra
     ggplot2::geom_point(color = "blue")
 
   if (x_transform == TRUE){
-    scatter <- scatter + scale_x_continuous(trans= "log2")
+    scatter <- scatter + ggplot2::scale_x_continuous(trans= "log2")
 
   }
 
   if (y_transform == TRUE){
-    scatter <- scatter + scale_y_continuous(trans = "log2")
+    scatter <- scatter + ggplot2::scale_y_continuous(trans = "log2")
   }
 
   scatter <- scatter + ggplot2::labs(title = paste(rlang::get_expr(scatter$mapping$x), " vs ", rlang::get_expr(scatter$mapping$y), "(Pearson Correlation: ",  corr_val, ")"))
