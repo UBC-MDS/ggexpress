@@ -43,16 +43,12 @@ ts_plot <- function(data, col, frequency){
     stop("The column names were not found")
   }
 
-  if (typeof(df[[col]]) != "double"){
-    stop("The column selected is not suitable for time series analysis")
-  }
-
   # convert csv file into a time series object
   ts <- ts(df[[col]], frequency = frequency)
 
   # check the time series object
   if (time(ts)[2] - time(ts)[1] != time(ts)[3] - time(ts)[2]){
-    stop("This time series is irregular.")
+    stop("The interval of the time series should be the same.")
   }
 
   # plot the raw data and the decomposed components
