@@ -4,7 +4,24 @@
 \alias{scatter_express}
 \title{Create a scatterplot and calculate correlation values for two numerical variables}
 \usage{
-scatter_express()
+scatter_express(
+  df,
+  xval = NA,
+  yval = NA,
+  x_transform = FALSE,
+  y_transform = FALSE
+)
+}
+\arguments{
+\item{df}{Dataframe to plot}
+
+\item{xval}{x-var Column name used as the x-axis variable}
+
+\item{yval}{y-var Column name used as the y-axis variable}
+
+\item{x_transform}{Determines whether the x-axis undergoes a natural log transformation}
+
+\item{y_transform}{Determines whether the y-axis undergoes a natural log transformation}
 }
 \value{
 ggplot Object
@@ -12,7 +29,4 @@ ggplot Object
 \description{
 Creates a ggplot scatterplot object containing two numerical variables. Arguements in the
 function will control whether correlational values and log transformations are calculated for the input data.
-}
-\examples{
-scatter_express(heart_df, "chol","age", transform = FALSE, corr = "Pearson")
 }
