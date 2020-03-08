@@ -4,26 +4,23 @@
 \alias{ts_plot}
 \title{Time series decomposition and plot}
 \usage{
-ts_plot(data, col, type, frequency)
+ts_plot(data, col, frequency)
 }
 \arguments{
 \item{data}{str: the path of the csv file}
 
 \item{col}{str: the column to be analyzed}
 
-\item{type}{str: "regular" or "irregular"
-"regular": time series with regular time intervals
-"irregular": time series with irregular time intervals}
-
-\item{frequency}{int: the desired time interval}
+\item{frequency}{int: should choose from {1, 4, 12, 52}}
 }
 \value{
-a figure with 4 subplots
+ggplot Object
 }
 \description{
-Convert csv file into a time series object, decompose it into in trend, seasonality/cyclicity
+Convert csv file into a time series object, decompose it into trend, seasonality/cyclicity
 and noise/remainder/error and plot the raw data and the decomposed components.
+If the time series can't be decomposed, the function will just return the line chart of the raw data.
 }
 \examples{
-ts_plot("https://raw.githubusercontent.com/plotly/datasets/master/timeseries.csv", A, irregular, 3)
+ts_plot("~/Desktop/ts4_jjshares.csv", "earnings", 4)
 }
