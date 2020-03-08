@@ -28,7 +28,7 @@ install.packages('ggexpress')
 <br>
 [stats (v3.6.1 or higher)](https://www.rdocumentation.org/packages/stats/versions/3.6.2)
 <br>
-[tidyr v1.0.0](https://tidyr.tidyverse.org)
+[tidyr (v1.0.0)](https://tidyr.tidyverse.org)
 
 ### Usage
 
