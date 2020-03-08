@@ -24,11 +24,11 @@ install.packages('ggexpress')
 
 ### Dependencies
 
-[ggplot2](https://ggplot2.tidyverse.org)
+[ggplot2 (v3.2.1 or higher)](https://ggplot2.tidyverse.org)
 <br>
-[stats](https://www.rdocumentation.org/packages/stats/versions/3.6.2)
+[stats (v3.6.1 or higher)](https://www.rdocumentation.org/packages/stats/versions/3.6.2)
 <br>
-[tidyr](https://tidyr.tidyverse.org)
+[tidyr (v1.0.0)](https://tidyr.tidyverse.org)
 
 ### Usage
 
