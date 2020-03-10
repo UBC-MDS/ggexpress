@@ -1,0 +1,7 @@
+destination: docs
+
+template:
+  params:
+    bootswatch: cerulean
+    ganalytics: UA-000000-01
+
