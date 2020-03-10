@@ -25,8 +25,8 @@ Imports:
     rlang,
     magrittr,
     tibble,
-    stats
+    stats,
     vdiffr,
-    forecast
-Suggests: 
-    testthat (>= 2.1.0)
+    forecast,
+    testthat,
+    readr

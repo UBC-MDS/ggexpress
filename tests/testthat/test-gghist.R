@@ -35,9 +35,9 @@ iris_plot <- iris %>%
            label = paste("Standard Deviation is:", round(sd_length, 2)),
            color = "black")
 
-test_that::test_that("Output is of correct datatype.", {
+testthat::test_that("Output is of correct datatype.", {
 
-  test_that::expect_identical(class(gghist(iris, Sepal.Length)), class(iris_plot))
+  testthat::expect_identical(class(gghist(iris, Sepal.Length)), class(iris_plot))
 
 })
 
