@@ -3,6 +3,7 @@
 export("%>%")
 export(gghist)
 export(scatter_express)
+export(fourier_transform)
 export(ts_plot)
 importFrom(ggplot2,aes)
 importFrom(ggplot2,annotate)

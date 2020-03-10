@@ -26,5 +26,7 @@ Imports:
     magrittr,
     tibble,
     stats
+    vdiffr,
+    forecast
 Suggests: 
     testthat (>= 2.1.0)
