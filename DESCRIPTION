@@ -32,5 +32,8 @@ Imports:
     readr
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    covr
 VignetteBuilder: knitr
+URL: https://github.com/UBC-MDS/ggexpress
+BugReports: https://github.com/UBC-MDS/ggexpress/issues
