@@ -4,13 +4,8 @@
 \alias{scatter_express}
 \title{Create a scatterplot and calculate correlation values for two numerical variables}
 \usage{
-scatter_express(
-  df,
-  xval = NA,
-  yval = NA,
-  x_transform = FALSE,
-  y_transform = FALSE
-)
+scatter_express(df, xval = NA, yval = NA, x_transform = FALSE,
+  y_transform = FALSE)
 }
 \arguments{
 \item{df}{Dataframe to plot}
@@ -29,4 +24,7 @@ ggplot Object
 \description{
 Creates a ggplot scatterplot object containing two numerical variables. Arguements in the
 function will control whether correlational values and log transformations are calculated for the input data.
+}
+\examples{
+scatter_express(iris, "Sepal.Width", "Petal.Length")
 }

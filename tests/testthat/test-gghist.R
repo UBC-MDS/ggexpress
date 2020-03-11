@@ -1,12 +1,15 @@
+library(testthat)
+library(ggexpress)
+
 # Test Data
-iris <- as_tibble(iris)
+iris <- tibble::as_tibble(iris)
 
 variable <- iris$Sepal.Length
 mean_legnth <- mean(variable)
 median_length <- median(variable)
 sd_length <- sd(variable)
 
-sepal_freq <- as_tibble(as.data.frame(table(iris$Sepal.Length)))
+sepal_freq <- tibble::as_tibble(as.data.frame(table(iris$Sepal.Length)))
 
 annotation_x <- max(variable)*0.9
 y_max <- max(variable)
@@ -32,9 +35,9 @@ iris_plot <- iris %>%
            label = paste("Standard Deviation is:", round(sd_length, 2)),
            color = "black")
 
-test_that("Output is of correct datatype.", {
+testthat::test_that("Output is of correct datatype.", {
 
-  expect_identical(class(gghist(iris, Sepal.Length)), class(iris_plot))
+  testthat::expect_identical(class(gghist(iris, Sepal.Length)), class(iris_plot))
 
 })
 

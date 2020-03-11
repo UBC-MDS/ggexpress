@@ -16,7 +16,7 @@ library(ggplot2)
 #' @export
 #'
 #' @examples
-#' scatter_express(iris, "Sepal.Width, Petal.Length)
+#' scatter_express(iris, "Sepal.Width", "Petal.Length")
 scatter_express <- function(df, xval = NA, yval = NA, x_transform = FALSE, y_transform = FALSE){
 
   corr_df <- dplyr::select(df, {{xval}}, {{yval}})
