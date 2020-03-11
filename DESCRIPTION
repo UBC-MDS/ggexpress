@@ -30,3 +30,7 @@ Imports:
     forecast,
     testthat,
     readr
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
