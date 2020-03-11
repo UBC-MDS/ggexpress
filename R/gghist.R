@@ -8,9 +8,12 @@
 #' @return Produces a ggplot histogram with mean, median and standard deviation indicated on the plot.
 #'
 #' @export
+#' @importFrom ggplot2 ggplot
 #' @importFrom ggplot2 geom_histogram
 #' @importFrom ggplot2 geom_vline
 #' @importFrom ggplot2 annotate
+#' @importFrom ggplot2 aes
+#' @importFrom ggplot2 ggplot_build
 #'
 #' @examples
 #' gghist(iris, Sepal.Length)
@@ -25,7 +28,7 @@ gghist <- function(data, variable) {
   }
 
   # extract the variable
-  v <- dplyr::select({{data}}, {{variable}}) %>% pull()
+  v <- dplyr::select({{data}}, {{variable}}) %>% dplyr::pull()
 
 
   # get the variable statistics
@@ -38,7 +41,7 @@ gghist <- function(data, variable) {
 
 
   # make based ggplot histogram
-  {{data}} %>%
+  p1 <- {{data}} %>%
     ggplot(aes(x = {{variable}})) +
     geom_histogram() +
     geom_vline(xintercept = variable_mean, color = "red") +

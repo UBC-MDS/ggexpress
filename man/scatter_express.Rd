@@ -30,3 +30,6 @@ ggplot Object
 Creates a ggplot scatterplot object containing two numerical variables. Arguements in the
 function will control whether correlational values and log transformations are calculated for the input data.
 }
+\examples{
+scatter_express(iris, "Sepal.Width", "Petal.Length")
+}

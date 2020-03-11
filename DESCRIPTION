@@ -23,7 +23,14 @@ Imports:
     dplyr,
     Hmisc,
     rlang,
+    magrittr,
+    tibble,
+    stats,
     vdiffr,
-    forecast
+    forecast,
+    testthat,
+    readr
 Suggests: 
-    testthat (>= 2.1.0)
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
