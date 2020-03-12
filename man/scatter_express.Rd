@@ -27,7 +27,7 @@ scatter_express(
 ggplot Object
 }
 \description{
-Creates a ggplot scatterplot object containing two numerical variables. Arguements in the
+Creates a ggplot scatterplot object containing two numerical variables. Arguments in the
 function will control whether correlational values and log transformations are calculated for the input data.
 }
 \examples{

@@ -5,6 +5,8 @@
 
 <!-- badges: start -->
 
+[![R build
+status](https://github.com/UBC-MDS/ggexpress/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/ggexpress/actions)
 <!-- badges: end -->
 
 This package allows users to quickly create plots to facilitate
@@ -104,3 +106,24 @@ scatter_express(df = iris, xval = "Sepal.Width", yval = "Petal.Length")
 ```
 
 <img src="man/figures/README-example 2-1.png" width="100%" />
+
+Plots a time series and its decomposed components
+
+``` r
+ts_plot("extdata/example_data.csv", "earnings", 4)
+#> Parsed with column specification:
+#> cols(
+#>   date = col_character(),
+#>   earnings = col_double()
+#> )
+#> Parsed with column specification:
+#> cols(
+#>   date = col_character(),
+#>   earnings = col_double()
+#> )
+#> Registered S3 method overwritten by 'quantmod':
+#>   method            from
+#>   as.zoo.data.frame zoo
+```
+
+<img src="man/figures/README-ts_plot example-1.png" width="100%" />

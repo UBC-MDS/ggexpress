@@ -72,3 +72,7 @@ Creates a scatterplot and calculates correlation values for two numeric variable
 scatter_express(df = iris, xval = "Sepal.Width", yval = "Petal.Length")
 ```
 
+Plots a time series and its decomposed components
+```{r ts_plot example}
+ts_plot("extdata/example_data.csv", "earnings", 4)
+```
