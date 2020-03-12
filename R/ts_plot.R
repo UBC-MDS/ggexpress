@@ -4,7 +4,7 @@
 #' and noise/remainder/error and plot the raw data and the decomposed components.
 #' If the time series can't be decomposed, the function will just return the line chart of the raw data.
 #'
-#' @param data dataframe: a data.frame or tibble
+#' @param data str: the path of the csv file
 #' @param col str: the column to be analyzed
 #' @param frequency int: should choose from {1, 4, 12, 52}
 #'
