@@ -74,5 +74,12 @@ scatter_express(df = iris, xval = "Sepal.Width", yval = "Petal.Length")
 
 Plots a time series and its decomposed components
 ```{r ts_plot example}
-ts_plot("extdata/example_data.csv", "earnings", 4)
+time <- c("1950 Q1", "1950 Q2", "1950 Q3", "1950 Q4", 
+          "1951 Q1", "1951 Q2", "1951 Q3", "1951 Q4",
+          "1952 Q1", "1952 Q2", "1952 Q3", "1952 Q4")
+earnings <- c(0.71, 0.63, 0.82, 0.21, 
+              1.21, 1.03, 2.82, 0.51,
+              0.79, 0.92, 1.06, 0.41)
+ts_data <- tibble::tibble(time, earnings)
+ts_plot(data=ts_data, col="earnings", frequency=4)
 ```
