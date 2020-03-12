@@ -1,6 +1,6 @@
 #' Time series decomposition and plot
 #'
-#' Convert csv file into a time series object, decompose it into trend, seasonality/cyclicity
+#' Convert a dataframe/tibble into a time series object, decompose it into trend, seasonality/cyclicity
 #' and noise/remainder/error and plot the raw data and the decomposed components.
 #' If the time series can't be decomposed, the function will just return the line chart of the raw data.
 #'
