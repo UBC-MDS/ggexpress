@@ -1,11 +1,8 @@
+## ggexpress
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+![build](https://github.com/UBC-MDS/altairexpress/workflows/build/badge.svg) [![codecov](https://codecov.io/gh/UBC-MDS/altairexpress/branch/master/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/altairexpress)
 
-# ggexpress
-
-<!-- badges: start -->
-
-<!-- badges: end -->
+[![Documentation Status](https://readthedocs.org/projects/altairexpress/badge/?version=latest)](https://altairexpress.readthedocs.io/en/latest/?badge=latest)
 
 This package allows users to quickly create plots to facilitate
 exploratory data analysis along with providing additional summary
