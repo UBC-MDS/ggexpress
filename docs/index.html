@@ -71,6 +71,7 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
+
 <div id="ggexpress" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#ggexpress" class="anchor"></a>ggexpress</h1></div>
@@ -83,9 +84,15 @@
 <p>Install the development version from <a href="https://github.com/">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># install.packages("devtools")</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a>devtools<span class="op">::</span><span class="kw"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"UBC-MDS/ggexpress"</span>)</span></code></pre></div>
-<div id="summary-overview" class="section level3">
+</div>
+</div>
+<div id="package-vignette" class="section level1">
+<h1 class="hasAnchor">
+<a href="#package-vignette" class="anchor"></a>Package Vignette</h1>
+<p>Go <a href="https://ubc-mds.github.io/ggexpress/">here</a> to see step by step walk through of package functions.</p>
+<div id="package-summary" class="section level3">
 <h3 class="hasAnchor">
-<a href="#summary-overview" class="anchor"></a>Summary Overview</h3>
+<a href="#package-summary" class="anchor"></a>Package Summary</h3>
 <ul>
 <li>This package simplifies the process of conducting Exploratory Data Analysis (EDA) on new datasets. It is designed to allow the user to explore the data graphically as well as obtain some basic summary statistics, all by writing only one line of code. Plots are produced using ggplot2 package under the hood. As Jenny Bryan once said: “Someone has to write for-loops, but it doesn’t have to be you!”. This sentiment has been implemented here for EDA analysis. The user is able to spend more time on analyzing the dataset and less time on configuring complex plot settings.</li>
 </ul>
@@ -112,7 +119,6 @@
 <li>Though the package is not ‘new’ from a technical perspective, it does provide convenience to the user when needing to perform exploratory data analysis. There are many more universal summary packages out there, such as <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html">pandas.DataFrame.describe()</a> for python and <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/summary">summary</a> for R). <code>ggexpress</code> combines both analysis and visual representation of the data for complex graphics like Fourier transform and general plotting taks (i.e. histogram).</li>
 </ul>
 </div>
-</div>
 <div id="code-examples" class="section level2">
 <h2 class="hasAnchor">
 <a href="#code-examples" class="anchor"></a>Code Examples</h2>
@@ -126,10 +132,11 @@
 <span id="cb2-7"><a href="#cb2-7"></a><span class="co">#&gt; `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</span></span></code></pre></div>
 <p><img src="reference/figures/README-example%201-1.png" width="100%"></p>
 <p>Creates a scatterplot and calculates correlation values for two numeric variables</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw"><a href="reference/scatter_express.html">scatter_express</a></span>(<span class="dt">df =</span> iris, <span class="dt">xval =</span> <span class="st">"Sepal.Width"</span>, <span class="dt">yval =</span> <span class="st">"Petal.Length"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw"><a href="reference/scatter_express.html">scatter_express</a></span>(<span class="dt">df =</span> iris, <span class="dt">xval =</span> Sepal.Width, <span class="dt">yval =</span> Sepal.Length)</span></code></pre></div>
 <p><img src="reference/figures/README-example%202-1.png" width="100%"></p>
 </div>
 </div>
+
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
