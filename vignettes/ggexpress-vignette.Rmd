@@ -42,7 +42,7 @@ The `gapminder::gapminder` dataset will be used to explore the basic functionali
 
 ```{r}
 library(gapminder)
-gapminder
+gapminder::gapminder
 ```
 ### Obtain a histogram and basic summary statistics with gghist()
 This plot displays the position of the mean and median of life expectancy from the gapminder dataset. In addition, the plot also displays the value of the mean, median and standard deviation. 

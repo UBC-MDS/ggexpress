@@ -33,8 +33,8 @@ gghist <- function(data, variable) {
 
   # get the variable statistics
   variable_mean <- mean(v)
-  variable_median <- median(v)
-  variable_sd <- sd(v)
+  variable_median <- stats::median(v)
+  variable_sd <- stats::sd(v)
 
   # set the x-axis position for annotations
   annotation_x <- max(v)*0.9

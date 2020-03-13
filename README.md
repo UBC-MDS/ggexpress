@@ -20,7 +20,12 @@ Install the development version from [GitHub](https://github.com/) with:
 devtools::install_github("UBC-MDS/ggexpress")
 ```
 
-### Summary Overview
+# Package Vignette
+
+Go [here](https://ubc-mds.github.io/ggexpress/) to see step by step walk
+through of package functions.
+
+### Package Summary
 
   - This package simplifies the process of conducting Exploratory Data
     Analysis (EDA) on new datasets. It is designed to allow the user to
@@ -100,7 +105,7 @@ Creates a scatterplot and calculates correlation values for two numeric
 variables
 
 ``` r
-scatter_express(df = iris, xval = "Sepal.Width", yval = "Petal.Length")
+scatter_express(df = iris, xval = Sepal.Width, yval = Sepal.Length)
 ```
 
 <img src="man/figures/README-example 2-1.png" width="100%" />
