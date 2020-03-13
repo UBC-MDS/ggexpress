@@ -17,6 +17,9 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![R build status](https://github.com/UBC-MDS/ggexpress/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/ggexpress/actions)
+
+[![codecov](https://codecov.io/gh/UBC-MDS/ggexpress/branch/master/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/ggexpress)
+
 <!-- badges: end -->
 
 This package allows users to quickly create plots to facilitate exploratory data analysis along with providing additional summary statistics about the data such as mean, median, and correlation.
