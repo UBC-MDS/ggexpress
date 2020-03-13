@@ -7,7 +7,7 @@
 ts_plot(data, col, frequency)
 }
 \arguments{
-\item{data}{str: the path of the csv file}
+\item{data}{dataframe: a data.frame or tibble}
 
 \item{col}{str: the column to be analyzed}
 
@@ -17,10 +17,13 @@ ts_plot(data, col, frequency)
 ggplot Object
 }
 \description{
-Convert csv file into a time series object, decompose it into trend, seasonality/cyclicity
+Convert a dataframe/tibble into a time series object, decompose it into trend, seasonality/cyclicity
 and noise/remainder/error and plot the raw data and the decomposed components.
 If the time series can't be decomposed, the function will just return the line chart of the raw data.
 }
 \examples{
-ts_plot("~/Desktop/ts4_jjshares.csv", "earnings", 4)
+time <- c("1950 Q1", "1950 Q2", "1950 Q3", "1950 Q4", "1951 Q1", "1951 Q2", "1951 Q3", "1951 Q4")
+earnings <- c(0.71, 0.63, 0.82, 0.91, 0.71, 0.63, 0.82, 0.91)
+ts_data <- tibble(time, earnings)
+ts_plot(data=ts_data, col="earnings", frequency=4)
 }
