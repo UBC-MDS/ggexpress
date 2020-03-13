@@ -25,7 +25,12 @@ Install the development version from [GitHub](https://github.com/) with:
 devtools::install_github("UBC-MDS/ggexpress")
 ```
 
-### Summary Overview
+# Package Vignette
+
+Go [here](https://ubc-mds.github.io/ggexpress/) to see step by step walk
+through of package functions.
+
+### Package Summary
 
   - This package simplifies the process of conducting Exploratory Data
     Analysis (EDA) on new datasets. It is designed to allow the user to
@@ -57,10 +62,10 @@ devtools::install_github("UBC-MDS/ggexpress")
     input variable are overlayed onto the plot (e.g. mean and median
     vertical lines) and the sample standard deviation.
 
-  - **Time series analysis:** This is a function that takes in a local
-    path to the time series data, decomposes the timeseries and finally
-    visualizes the raw data along with decomposition components. Except
-    annual time series, the function will return a graph with 4
+  - **Time series analysis:** This is a function that takes in a
+    dataframe to the time series data, decomposes the time series and
+    finally visualizes the raw data along with decomposition components.
+    Except annual time series, the function will return a graph with 4
     subplots, which includes the raw data, estimated trend,
     seasonal/cyclic and noise components.
 
@@ -105,7 +110,7 @@ Creates a scatterplot and calculates correlation values for two numeric
 variables
 
 ``` r
-scatter_express(df = iris, xval = "Sepal.Width", yval = "Petal.Length")
+scatter_express(df = iris, xval = Sepal.Width, yval = Sepal.Length)
 ```
 
 <img src="man/figures/README-example 2-1.png" width="100%" />
