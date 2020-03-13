@@ -5,6 +5,10 @@
 
 <!-- badges: start -->
 
+[![R build
+status](https://github.com/UBC-MDS/ggexpress/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/ggexpress/actions)
+
+[![codecov](https://codecov.io/gh/UBC-MDS/ggexpress/branch/master/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/ggexpress)
 <!-- badges: end -->
 
 This package allows users to quickly create plots to facilitate
@@ -57,10 +61,10 @@ through of package functions.
     input variable are overlayed onto the plot (e.g. mean and median
     vertical lines) and the sample standard deviation.
 
-  - **Time series analysis:** This is a function that takes in a local
-    path to the time series data, decomposes the timeseries and finally
-    visualizes the raw data along with decomposition components. Except
-    annual time series, the function will return a graph with 4
+  - **Time series analysis:** This is a function that takes in a
+    dataframe to the time series data, decomposes the timeseries and
+    finally visualizes the raw data along with decomposition components.
+    Except annual time series, the function will return a graph with 4
     subplots, which includes the raw data, estimated trend,
     seasonal/cyclic and noise components.
 
@@ -109,3 +113,21 @@ scatter_express(df = iris, xval = Sepal.Width, yval = Sepal.Length)
 ```
 
 <img src="man/figures/README-example 2-1.png" width="100%" />
+
+Plots a time series and its decomposed components
+
+``` r
+time <- c("1950 Q1", "1950 Q2", "1950 Q3", "1950 Q4", 
+           "1951 Q1", "1951 Q2", "1951 Q3", "1951 Q4",
+           "1952 Q1", "1952 Q2", "1952 Q3", "1952 Q4")
+earnings <- c(0.71, 0.63, 0.82, 0.21, 
+              1.21, 1.03, 2.82, 0.51,
+              0.79, 0.92, 1.06, 0.41)
+ ts_data <- tibble::tibble(time, earnings)
+ ts_plot(data=ts_data, col="earnings", frequency=4)
+#> Registered S3 method overwritten by 'quantmod':
+#>   method            from
+#>   as.zoo.data.frame zoo
+```
+
+<img src="man/figures/README-ts_plot example-1.png" width="100%" />
