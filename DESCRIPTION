@@ -17,7 +17,7 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.0
+RoxygenNote: 7.0.2
 Imports: 
     ggplot2,
     dplyr,
@@ -28,11 +28,11 @@ Imports:
     stats,
     forecast,
     testthat,
-    readr
+    readr,
+    gapminder
 Suggests:
     knitr,
-    rmarkdown,
-    covr
+    rmarkdown
 VignetteBuilder: knitr
 URL: https://github.com/UBC-MDS/ggexpress
 BugReports: https://github.com/UBC-MDS/ggexpress/issues
