@@ -29,7 +29,8 @@ Imports:
     vdiffr,
     forecast,
     testthat,
-    readr
+    readr,
+    gapminder
 Suggests: 
     knitr,
     rmarkdown

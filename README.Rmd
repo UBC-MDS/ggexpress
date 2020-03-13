@@ -27,9 +27,13 @@ Install the development version from [GitHub](https://github.com/) with:
 ``` r
 # install.packages("devtools")
 devtools::install_github("UBC-MDS/ggexpress")
+
 ```
 
-### Summary Overview
+# Package Vignette
+Go [here](https://ubc-mds.github.io/ggexpress/) to see step by step walk through of package functions. 
+
+### Package Summary
 - This package simplifies the process of conducting Exploratory Data Analysis (EDA) on new datasets. It is designed to allow the user to explore the data graphically as well as obtain some basic summary statistics, all by writing only one line of code. Plots are produced using ggplot2 package under the hood. As Jenny Bryan once said: “Someone has to write for-loops, but it doesn’t have to be you!”. This sentiment has been implemented here for EDA analysis. The user is able to spend more time on analyzing the dataset and less time on configuring complex plot settings. 
 
 ### Features
@@ -68,6 +72,6 @@ gghist(data = iris, variable = Sepal.Length)
 
 Creates a scatterplot and calculates correlation values for two numeric variables
 ```{r example 2}
-scatter_express(df = iris, xval = "Sepal.Width", yval = "Petal.Length")
+scatter_express(df = iris, xval = Sepal.Width, yval = Sepal.Length)
 ```
 
