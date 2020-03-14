@@ -18,7 +18,6 @@
 #' @examples
 #' gghist(iris, Sepal.Length)
 gghist <- function(data, variable) {
-  #todo: raise an exception about the data type of input variable. must be continuous 1D vector
   #todo: process the variable column in some way to find a good way to set the binwidth in geom_hist???
   #todo:allow the user to specify the number of bins; need a bins argument with a default
 

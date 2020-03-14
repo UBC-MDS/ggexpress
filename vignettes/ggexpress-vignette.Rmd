@@ -38,24 +38,50 @@ Converts time series data into 4 subplots displaying the raw data, trend, season
 - `ts_plot`
 
 ## Data: gapminder
-The `gapminder::gapminder` dataset will be used to explore the basic functionality of `gghist` and `ggscatter`. 
+The `gapminder::gapminder` dataset will be used to explore the basic functionality of each of the plots. 
 
 ```{r}
 library(gapminder)
 gapminder::gapminder
 ```
 ### Obtain a histogram and basic summary statistics with gghist()
-This plot displays the position of the mean and median of life expectancy from the gapminder dataset. In addition, the plot also displays the value of the mean, median and standard deviation. 
+
+>This plot displays the position of the mean and median of life expectancy from the gapminder dataset. In addition, the plot also displays the value of the mean, median and standard deviation. 
+
 ```{r gghist_lifeExp, fig.align='center', fig.width=6, fig.height=4}
 gghist(data = gapminder, variable = lifeExp)
 ```
-```{r gghist_gdpPercap, fig.align='center', fig.width=6, fig.height=4}
+
+> This plot shows the distribution of gdp per capita. 
+
+```{r gghist_gdpPercap, fig.align='center', fig.width=7, fig.height=4}
 gghist(data = gapminder, variable = gdpPercap)
 ```
 
-### Obtain a scatter and correlation with ggscatter()
+### Obtain a scatterplot with scatter_express()
 
-### Visualize a time series and its decomposed components with ts_plot()
+> The `scatter_express()` returns a basic scatterplot but also returns the correlation coefficient between the two variables. 
+
+```{r scatter_iris, fig.align='center', fig.width=6, fig.height=4}
+scatter_express(df = iris, 
+                xval = Petal.Length, 
+                yval = Petal.Width)
+```
+
+> In addition, scatter_express() provides the option display the data on a log transformed scale for data with non-linear relationships. 
+
+```{r log, fig.align='center', fig.width=6, fig.height=4}
+scatter_express(df = iris, 
+                xval = Sepal.Length, 
+                yval = Sepal.Width,
+                x_transform = TRUE,
+                y_transform = TRUE)
+
+```
+
+
+### Time Series with ts_plot()
+> This function, ts_plot(), is able to take in a time stamped dataframe and convert it into a time series object. The time series is then decomposed into its trend, seasonsal and white noise components. 
 
 ```{r ts_plot, fig.align='center', fig.width=6, fig.height=4}
  

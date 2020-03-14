@@ -36,7 +36,7 @@
 
 
 <meta property="og:title" content="Time series decomposition and plot — ts_plot" />
-<meta property="og:description" content="Convert csv file into a time series object, decompose it into trend, seasonality/cyclicity
+<meta property="og:description" content="Convert a dataframe into a time series object, decompose it into trend, seasonality/cyclicity
 and noise/remainder/error and plot the raw data and the decomposed components.
 If the time series can't be decomposed, the function will just return the line chart of the raw data." />
 <meta name="twitter:card" content="summary" />
@@ -120,7 +120,7 @@ If the time series can't be decomposed, the function will just return the line c
     </div>
 
     <div class="ref-description">
-    <p>Convert csv file into a time series object, decompose it into trend, seasonality/cyclicity
+    <p>Convert a dataframe into a time series object, decompose it into trend, seasonality/cyclicity
 and noise/remainder/error and plot the raw data and the decomposed components.
 If the time series can't be decomposed, the function will just return the line chart of the raw data.</p>
     </div>
@@ -132,7 +132,7 @@ If the time series can't be decomposed, the function will just return the line c
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>data</th>
-      <td><p>str: the path of the csv file</p></td>
+      <td><p>dataframe: should be data.frame or tibble</p></td>
     </tr>
     <tr>
       <th>col</th>
@@ -149,7 +149,13 @@ If the time series can't be decomposed, the function will just return the line c
     <p>ggplot Object</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>ts_plot</span>(<span class='st'>"~/Desktop/ts4_jjshares.csv"</span>, <span class='st'>"earnings"</span>, <span class='fl'>4</span>)</div><div class='output co'>#&gt; <span class='error'>Error: '~/Desktop/ts4_jjshares.csv' does not exist.</span></div></pre>
+    <pre class="examples"><div class='input'><span class='no'>time</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"1950 Q1"</span>, <span class='st'>"1950 Q2"</span>, <span class='st'>"1950 Q3"</span>, <span class='st'>"1950 Q4"</span>,
+          <span class='st'>"1951 Q1"</span>, <span class='st'>"1951 Q2"</span>, <span class='st'>"1951 Q3"</span>, <span class='st'>"1951 Q4"</span>)
+<span class='no'>earnings</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0.71</span>, <span class='fl'>0.63</span>, <span class='fl'>0.82</span>, <span class='fl'>0.91</span>, <span class='fl'>0.71</span>, <span class='fl'>0.63</span>, <span class='fl'>0.82</span>, <span class='fl'>0.91</span>)
+<span class='no'>ts_data</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>tibble</span><span class='kw ns'>::</span><span class='fu'><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></span>(<span class='no'>time</span>, <span class='no'>earnings</span>)
+<span class='fu'>ts_plot</span>(<span class='kw'>data</span><span class='kw'>=</span><span class='no'>ts_data</span>, <span class='kw'>col</span><span class='kw'>=</span><span class='st'>"earnings"</span>, <span class='kw'>frequency</span><span class='kw'>=</span><span class='fl'>4</span>)</div><div class='output co'>#&gt; <span class='message'>Registered S3 method overwritten by 'quantmod':</span>
+#&gt; <span class='message'>  method            from</span>
+#&gt; <span class='message'>  as.zoo.data.frame zoo </span></div><div class='img'><img src='ts_plot-1.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
