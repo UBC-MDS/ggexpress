@@ -45,7 +45,7 @@ test_ts_plot <- function() {
     expect_true("GeomRect" %in% c(class(test_plot1$layers[[4]]$geom)))
   })
 
-  test_that("Corresponding error message should be expected if the data path argument doesn't link to a csv file.", {
+  test_that("Corresponding error message should be expected if the data argument doesn't link to a dataframe/tibble.", {
     expect_error(ts_plot(time1, "earnings1", 4),
                  regexp = "Data must be of type tibble or data.frame")
   })

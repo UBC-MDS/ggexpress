@@ -41,7 +41,7 @@ ts_plot <- function(data, col, frequency){
     stop("The column names were not found")
   }
 
-  # convert csv file into a time series object
+  # convert the dataframe into a time series object
   ts <- stats::ts(data[[col]], frequency = frequency)
 
   # plot the raw data and the decomposed components
