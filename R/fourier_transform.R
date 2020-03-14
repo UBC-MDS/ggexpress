@@ -47,12 +47,13 @@ fourier_transform <- function(data, time_col, data_col) {
       testthat::expect_equal((my_time[n + 1] - my_time[n]), sampling_freq, tolerance = 1e-2)
     })
   }
-  #amplitudes <- abs(stats::fft(my_signal)[1:((length(my_time)/2) + 1)])
-  #frequencies <- seq(from = 0, to = 1/(2*sampling_freq), length = ((length(my_time)/2)))
 
   amplitudes <- abs(fft(my_signal)[1:((length(my_time)/2)+1)])
   frequencies <- seq(from=0, to=1/(2*sampling_freq), length=((length(my_time)/2)))
 
+  if (length(amplitudes) > length(frequencies)) {
+    amplitudes <- head(amplitudes, -1)
+  }
 
   my_df <- tibble::tibble(`Frequency` = frequencies, `Amplitude` = amplitudes)
 
