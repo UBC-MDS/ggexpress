@@ -24,6 +24,16 @@ Install the development version from [GitHub](https://github.com/) with:
 devtools::install_github("UBC-MDS/ggexpress")
 ```
 
+# Package Developers
+
+  - Jack Tan
+
+  - [Lesley Miller](https://github.com/aromatic-toast)
+
+  - Tejas Phaterpekar
+
+  - Wenjiao Zou
+
 # Package Vignette
 
 Go [here](https://ubc-mds.github.io/ggexpress/) to see step by step walk
