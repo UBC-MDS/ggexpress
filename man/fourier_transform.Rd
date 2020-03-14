@@ -23,7 +23,7 @@ Creates a Fourier transform plot of the data specified in the 'data_col' column 
 \examples{
 my_data = tibble::tibble(time_series =  c(0, 1, 2, 3), signal = c(2, 3, 4, 6))
 fourier_transform(data = my_data,
-                  time_col = time_series,
-                  data_col = signal)
+                  time_col = "time_series",
+                  data_col = "signal")
 
 }

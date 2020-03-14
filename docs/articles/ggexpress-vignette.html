@@ -104,7 +104,7 @@
 <div id="data-gapminder" class="section level2">
 <h2 class="hasAnchor">
 <a href="#data-gapminder" class="anchor"></a>Data: gapminder</h2>
-<p>The <code><a href="https://rdrr.io/pkg/gapminder/man/gapminder.html">gapminder::gapminder</a></code> dataset will be used to explore the basic functionality of <code>gghist</code> and <code>ggscatter</code>.</p>
+<p>The <code><a href="https://rdrr.io/pkg/gapminder/man/gapminder.html">gapminder::gapminder</a></code> dataset will be used to explore the basic functionality of each of the plots.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(gapminder)</span>
 <span id="cb2-2"><a href="#cb2-2"></a>gapminder<span class="op">::</span>gapminder</span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="co">#&gt; # A tibble: 1,704 x 6</span></span>
@@ -124,19 +124,61 @@
 <div id="obtain-a-histogram-and-basic-summary-statistics-with-gghist" class="section level3">
 <h3 class="hasAnchor">
 <a href="#obtain-a-histogram-and-basic-summary-statistics-with-gghist" class="anchor"></a>Obtain a histogram and basic summary statistics with gghist()</h3>
+<blockquote>
 <p>This plot displays the position of the mean and median of life expectancy from the gapminder dataset. In addition, the plot also displays the value of the mean, median and standard deviation.</p>
+</blockquote>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw"><a href="../reference/gghist.html">gghist</a></span>(<span class="dt">data =</span> gapminder, <span class="dt">variable =</span> lifeExp)</span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="co">#&gt; `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</span></span>
 <span id="cb3-3"><a href="#cb3-3"></a><span class="co">#&gt; `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</span></span></code></pre></div>
 <p><img src="ggexpress-vignette_files/figure-html/gghist_lifeExp-1.png" width="576" style="display: block; margin: auto;"></p>
+<blockquote>
+<p>This plot shows the distribution of gdp per capita.</p>
+</blockquote>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw"><a href="../reference/gghist.html">gghist</a></span>(<span class="dt">data =</span> gapminder, <span class="dt">variable =</span> gdpPercap)</span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="co">#&gt; `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</span></span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="co">#&gt; `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</span></span></code></pre></div>
-<p><img src="ggexpress-vignette_files/figure-html/gghist_gdpPercap-1.png" width="768" style="display: block; margin: auto;"></p>
+<p><img src="ggexpress-vignette_files/figure-html/gghist_gdpPercap-1.png" width="672" style="display: block; margin: auto;"></p>
 </div>
-<div id="obtain-a-scatter-and-correlation-with-ggscatter" class="section level3">
+<div id="obtain-a-scatterplot-with-scatter_express" class="section level3">
 <h3 class="hasAnchor">
-<a href="#obtain-a-scatter-and-correlation-with-ggscatter" class="anchor"></a>Obtain a scatter and correlation with ggscatter()</h3>
+<a href="#obtain-a-scatterplot-with-scatter_express" class="anchor"></a>Obtain a scatterplot with scatter_express()</h3>
+<blockquote>
+<p>The <code><a href="../reference/scatter_express.html">scatter_express()</a></code> returns a basic scatterplot but also returns the correlation coefficient between the two variables.</p>
+</blockquote>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw"><a href="../reference/scatter_express.html">scatter_express</a></span>(<span class="dt">df =</span> iris, </span>
+<span id="cb5-2"><a href="#cb5-2"></a>                <span class="dt">xval =</span> Petal.Length, </span>
+<span id="cb5-3"><a href="#cb5-3"></a>                <span class="dt">yval =</span> Petal.Width)</span></code></pre></div>
+<p><img src="ggexpress-vignette_files/figure-html/scatter_iris-1.png" width="576" style="display: block; margin: auto;"></p>
+<blockquote>
+<p>In addition, scatter_express() provides the option display the data on a log transformed scale for data with non-linear relationships.</p>
+</blockquote>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw"><a href="../reference/scatter_express.html">scatter_express</a></span>(<span class="dt">df =</span> iris, </span>
+<span id="cb6-2"><a href="#cb6-2"></a>                <span class="dt">xval =</span> Sepal.Length, </span>
+<span id="cb6-3"><a href="#cb6-3"></a>                <span class="dt">yval =</span> Sepal.Width,</span>
+<span id="cb6-4"><a href="#cb6-4"></a>                <span class="dt">x_transform =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb6-5"><a href="#cb6-5"></a>                <span class="dt">y_transform =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<p><img src="ggexpress-vignette_files/figure-html/log-1.png" width="576" style="display: block; margin: auto;"></p>
+</div>
+<div id="time-series-with-ts_plot" class="section level3">
+<h3 class="hasAnchor">
+<a href="#time-series-with-ts_plot" class="anchor"></a>Time Series with ts_plot()</h3>
+<blockquote>
+<p>This function, ts_plot(), is able to take in a time stamped dataframe and convert it into a time series object. The time series is then decomposed into its trend, seasonsal and white noise components.</p>
+</blockquote>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a> </span>
+<span id="cb7-2"><a href="#cb7-2"></a>time &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"1950 Q1"</span>, <span class="st">"1950 Q2"</span>, <span class="st">"1950 Q3"</span>, <span class="st">"1950 Q4"</span>, </span>
+<span id="cb7-3"><a href="#cb7-3"></a>          <span class="st">"1951 Q1"</span>, <span class="st">"1951 Q2"</span>, <span class="st">"1951 Q3"</span>, <span class="st">"1951 Q4"</span>,</span>
+<span id="cb7-4"><a href="#cb7-4"></a>          <span class="st">"1952 Q1"</span>, <span class="st">"1952 Q2"</span>, <span class="st">"1952 Q3"</span>, <span class="st">"1952 Q4"</span>)</span>
+<span id="cb7-5"><a href="#cb7-5"></a> earnings &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">0.71</span>, <span class="fl">0.63</span>, <span class="fl">0.82</span>, <span class="fl">0.91</span>, </span>
+<span id="cb7-6"><a href="#cb7-6"></a>               <span class="fl">0.51</span>, <span class="fl">1.31</span>, <span class="fl">1.82</span>, <span class="fl">2.01</span>,</span>
+<span id="cb7-7"><a href="#cb7-7"></a>               <span class="fl">0.63</span>, <span class="fl">0.82</span>, <span class="fl">0.91</span>, <span class="fl">0.71</span>)</span>
+<span id="cb7-8"><a href="#cb7-8"></a>ts_data &lt;-<span class="st"> </span>tibble<span class="op">::</span><span class="kw"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span>(time, earnings)</span>
+<span id="cb7-9"><a href="#cb7-9"></a></span>
+<span id="cb7-10"><a href="#cb7-10"></a><span class="kw"><a href="../reference/ts_plot.html">ts_plot</a></span>(ts_data, <span class="st">"earnings"</span>, <span class="dv">4</span>)</span>
+<span id="cb7-11"><a href="#cb7-11"></a><span class="co">#&gt; Registered S3 method overwritten by 'quantmod':</span></span>
+<span id="cb7-12"><a href="#cb7-12"></a><span class="co">#&gt;   method            from</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a><span class="co">#&gt;   as.zoo.data.frame zoo</span></span></code></pre></div>
+<p><img src="ggexpress-vignette_files/figure-html/ts_plot-1.png" width="576" style="display: block; margin: auto;"></p>
 </div>
 </div>
   </div>
