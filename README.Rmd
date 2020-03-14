@@ -75,7 +75,7 @@ Go [here](https://ubc-mds.github.io/ggexpress/) to see step by step walk through
 
 This is a basic example of how to make an exploratory histogram that displays summary stastics about the variable. 
 
-```{r example 1}
+```{r example_1}
 library(ggexpress)
 ## basic example code
 
@@ -85,12 +85,12 @@ gghist(data = iris, variable = Sepal.Length)
 ```
 
 Creates a scatterplot and calculates correlation values for two numeric variables
-```{r example 2}
+```{r example_2}
 scatter_express(df = iris, xval = Sepal.Width, yval = Sepal.Length)
 ```
 
 Plots a time series and its decomposed components
-```{r ts_plot example}
+```{r ts_plot}
 time <- c("1950 Q1", "1950 Q2", "1950 Q3", "1950 Q4", 
            "1951 Q1", "1951 Q2", "1951 Q3", "1951 Q4",
            "1952 Q1", "1952 Q2", "1952 Q3", "1952 Q4")
