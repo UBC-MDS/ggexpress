@@ -24,6 +24,16 @@ Install the development version from [GitHub](https://github.com/) with:
 devtools::install_github("UBC-MDS/ggexpress")
 ```
 
+# Package Developers
+
+  - Jack Tan
+
+  - [Lesley Miller](https://github.com/aromatic-toast)
+
+  - Tejas Phaterpekar
+
+  - Wenjiao Zou
+
 # Package Vignette
 
 Go [here](https://ubc-mds.github.io/ggexpress/) to see step by step walk
@@ -73,7 +83,24 @@ through of package functions.
 [ggplot2 (v3.2.1 or higher)](https://ggplot2.tidyverse.org) <br> [stats
 (v3.6.1 or
 higher)](https://www.rdocumentation.org/packages/stats/versions/3.6.2)
-<br> [tidyr (v1.0.0)](https://tidyr.tidyverse.org)
+<br> [tidyr (v1.0.0)](https://tidyr.tidyverse.org) <br> [Hmise (v4.3 or
+higher)](https://www.rdocumentation.org/packages/Hmisc/versions/4.3-1)
+<br> [forecast
+(v8.11)](https://cran.r-project.org/web/packages/forecast/index.html)
+<br> [rlang
+(v0.4.5)](https://cran.r-project.org/web/packages/rlang/index.html) <br>
+[magrittr
+(v1.5)](https://cran.r-project.org/web/packages/magrittr/index.html)
+<br> [tibble
+(v2.1.3)](https://cran.r-project.org/web/packages/tibble/index.html)
+<br> [vdiffr
+(v0.3.1)](https://cran.r-project.org/web/packages/vdiffr/index.html)
+<br> [testthat
+(v2.3.3)](https://cran.r-project.org/web/packages/testthat/index.html)
+<br> [readr
+(v1.3.1)](https://cran.r-project.org/web/packages/readr/readme/README.html)
+<br> [gapminder
+(v0.3.0)](https://cran.r-project.org/web/packages/gapminder/README.html)
 
 ### How this package fits into the R ecosytem
 
@@ -103,7 +130,7 @@ gghist(data = iris, variable = Sepal.Length)
 #> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-<img src="man/figures/README-example 1-1.png" width="100%" />
+<img src="man/figures/README-example1-1.png" width="100%" />
 
 Creates a scatterplot and calculates correlation values for two numeric
 variables
@@ -112,7 +139,7 @@ variables
 scatter_express(df = iris, xval = Sepal.Width, yval = Sepal.Length)
 ```
 
-<img src="man/figures/README-example 2-1.png" width="100%" />
+<img src="man/figures/README-example2-1.png" width="100%" />
 
 Plots a time series and its decomposed components
 
@@ -130,4 +157,4 @@ earnings <- c(0.71, 0.63, 0.82, 0.21,
 #>   as.zoo.data.frame zoo
 ```
 
-<img src="man/figures/README-ts_plot example-1.png" width="100%" />
+<img src="man/figures/README-ts_plot_example-1.png" width="100%" />

@@ -46,6 +46,9 @@ fourier_transform <- function(data, time_col, data_col) {
   amplitudes <- abs(fft(my_signal)[1:((length(my_time)/2)+1)])
   frequencies <- seq(from=0, to=1/(2*sampling_freq), length=((length(my_time)/2)))
 
+  if (length(amplitudes) > length(frequencies)) {
+    amplitudes <- head(amplitudes, -1)
+  }
 
   my_df <- data.frame('Frequency'= frequencies, 'Amplitude'= amplitudes)
 
