@@ -46,11 +46,17 @@ ts_plot <- function(data, col, frequency){
 
   # plot the raw data and the decomposed components
   if (frequency == 1){
-    plt <- forecast::autoplot(ts, main = "Time series data", xlab="Time", ylab = col)
+    plt <- forecast::autoplot(ts,
+                              main = "Time series data",
+                              xlab="Time",
+                              ylab = col)
   }
   else {
     decomposed <- stats::decompose(ts)
-    plt <- forecast::autoplot(decomposed, main = "Decomposed Time-Series Data", xlab="Time", ylab = col)
+    plt <- forecast::autoplot(decomposed,
+                              main = "Decomposed Time-Series Data",
+                              xlab="Time",
+                              ylab = col)
   }
   return(plt)
 }

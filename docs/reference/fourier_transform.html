@@ -146,9 +146,12 @@ want to apply Fourier transform to</p></td>
     <p>a ggplot2 line plot of frequency vs amplitude of the data inputed</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>fourier_transform</span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>my_data</span>,
-                  <span class='kw'>time_col</span> <span class='kw'>=</span> <span class='st'>'time_series'</span>,
-                  <span class='kw'>data_col</span> <span class='kw'>=</span> <span class='st'>'signal'</span>)</div><div class='output co'>#&gt; <span class='error'>Error in loadNamespace(name): there is no package called ‘test_that’</span></div><div class='input'>
+    <pre class="examples"><div class='input'><span class='no'>my_data</span> <span class='kw'>=</span> <span class='kw pkg'>tibble</span><span class='kw ns'>::</span><span class='fu'><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></span>(<span class='kw'>time_series</span> <span class='kw'>=</span>  <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>2</span>, <span class='fl'>3</span>), <span class='kw'>signal</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2</span>, <span class='fl'>3</span>, <span class='fl'>4</span>, <span class='fl'>6</span>))
+<span class='fu'>fourier_transform</span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>my_data</span>,
+                  <span class='kw'>time_col</span> <span class='kw'>=</span> <span class='st'>"time_series"</span>,
+                  <span class='kw'>data_col</span> <span class='kw'>=</span> <span class='st'>"signal"</span>)</div><div class='output co'>#&gt; <span class='error'>Error: Tibble columns must have consistent lengths, only values of length one are recycled:</span>
+#&gt; <span class='error'>* Length 2: Column `Frequency`</span>
+#&gt; <span class='error'>* Length 3: Column `Amplitude`</span></div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

@@ -13,19 +13,23 @@ library(dplyr)
 #' @export
 #'
 #' @examples
+#' my_data = tibble::tibble(time_series =  c(0, 1, 2, 3), signal = c(2, 3, 4, 6))
 #' fourier_transform(data = my_data,
-#'                   time_col = 'time_series',
-#'                   data_col = 'signal')
+#'                   time_col = "time_series",
+#'                   data_col = "signal")
 #'
 
 fourier_transform <- function(data, time_col, data_col) {
+
   # Test that the inputs are valid
   testthat::test_that("Name of time column is not a string!.", {
     testthat::expect_equal(typeof(time_col), 'character')
   })
-  test_that::test_that("Name of data column is not a string!.", {
+
+  testthat::test_that("Name of data column is not a string!.", {
     testthat::expect_equal(typeof(data_col), 'character')
   })
+
   my_signal <- as.numeric(unlist(dplyr::select(data, data_col)))
   my_time <- as.numeric(unlist(dplyr::select(data, time_col)))
 
@@ -40,17 +44,20 @@ fourier_transform <- function(data, time_col, data_col) {
   sampling_freq <- my_time[2] - my_time[1]
   for (n in 1:(length(my_time) - 1)) {
     testthat::test_that('Sampling time is not uniformly distributed! Assure that time between samples is constant!', {
-      testthat::expect_equal((my_time[n + 1] - my_time[n]), sampling_freq, tolerance=1e-2)
+      testthat::expect_equal((my_time[n + 1] - my_time[n]), sampling_freq, tolerance = 1e-2)
     })
   }
+  #amplitudes <- abs(stats::fft(my_signal)[1:((length(my_time)/2) + 1)])
+  #frequencies <- seq(from = 0, to = 1/(2*sampling_freq), length = ((length(my_time)/2)))
+
   amplitudes <- abs(fft(my_signal)[1:((length(my_time)/2)+1)])
   frequencies <- seq(from=0, to=1/(2*sampling_freq), length=((length(my_time)/2)))
 
 
-  my_df <- data.frame('Frequency'= frequencies, 'Amplitude'= amplitudes)
+  my_df <- tibble::tibble(`Frequency` = frequencies, `Amplitude` = amplitudes)
 
   my_plot <- ggplot2::ggplot(data = my_df) +
-    ggplot2::geom_line(aes(x = `Frequency`, y = `Amplitude`)) +
+    ggplot2::geom_line(aes(x = Frequency, y = Amplitude)) +
     ggplot2::ggtitle('FFT on Input Signal Data')
 
   return(my_plot)

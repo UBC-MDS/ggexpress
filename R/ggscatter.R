@@ -21,25 +21,30 @@ scatter_express <- function(df, xval = NA, yval = NA, x_transform = FALSE, y_tra
 
   corr_df <- dplyr::select(df, {{xval}}, {{yval}})
 
-  if (is.numeric(df[[1]]) == FALSE) stop("Your x-variable must be numeric")
-  if (is.numeric(df[[2]]) == FALSE) stop("Your y-variable must be numeric")
+  if (is.numeric(corr_df[[1]]) == FALSE) stop("Your x-variable must be numeric")
+  if (is.numeric(corr_df[[2]]) == FALSE) stop("Your y-variable must be numeric")
 
-  corr_val <- round(stats::cor(df[[1]], df[[2]]), 2)
+  corr_val <- round(stats::cor(corr_df[[1]], corr_df[[2]]), 2)
 
 
-  scatter <- ggplot2::ggplot(df, ggplot2::aes(x = {{xval}}, y = {{yval}})) +
+  scatter <- ggplot2::ggplot(corr_df, ggplot2::aes(x = {{xval}}, y = {{yval}})) +
     ggplot2::geom_point(color = "blue")
 
-  if (x_transform == TRUE){
-    scatter <- scatter + ggplot2::scale_x_continuous(trans= "log2")
+  if (x_transform == TRUE) {
+    scatter <- scatter + ggplot2::scale_x_continuous(trans = "log2")
 
   }
 
-  if (y_transform == TRUE){
+  if (y_transform == TRUE) {
     scatter <- scatter + ggplot2::scale_y_continuous(trans = "log2")
   }
 
-  scatter <- scatter + ggplot2::labs(title = paste(rlang::get_expr(scatter$mapping$x), " vs ", rlang::get_expr(scatter$mapping$y), "(Pearson Correlation: ",  corr_val, ")"))
+  scatter <- scatter + ggplot2::labs(title = paste(rlang::get_expr(scatter$mapping$x),
+
+                                                   " vs ", rlang::get_expr(scatter$mapping$y),
+                                                   "(Pearson Correlation: ",
+                                                   corr_val,
+                                                   ")"))
   scatter
 }
 
