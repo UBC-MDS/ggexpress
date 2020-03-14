@@ -8,7 +8,7 @@ y2 <- sin(2*pi*200*t)
 my_df1 = data.frame('X1'= t, 'X2'= y1)
 my_df2 = data.frame('X1'= t, 'X2'= y2)
 time_col = 'X1'
-data_col = 'X1'
+data_col = 'X2'
 
 test1 <- fourier_transform(data = my_df1,
                            time_col = time_col,
