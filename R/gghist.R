@@ -27,8 +27,15 @@ gghist <- function(data, variable) {
     stop("Data must be of type tibble or data.frame")
   }
 
+
+
   # extract the variable
   v <- dplyr::select({{data}}, {{variable}}) %>% dplyr::pull()
+
+  # check that variable is numeric continuous
+  if (!class(v) %in% c('numeric', 'integer')) {
+    stop("Variable must be of type numeric and continuous.")
+  }
 
 
   # get the variable statistics
