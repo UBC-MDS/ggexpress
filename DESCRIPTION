@@ -26,7 +26,6 @@ Imports:
     magrittr,
     tibble,
     stats,
-    vdiffr,
     forecast,
     testthat,
     readr,
