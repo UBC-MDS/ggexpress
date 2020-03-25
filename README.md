@@ -5,8 +5,7 @@
 
 <!-- badges: start -->
 
-[![R build
-status](https://github.com/UBC-MDS/ggexpress/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/ggexpress/actions)
+![R-CMD-check](https://github.com/UBC-MDS/ggexpress/workflows/R-CMD-check/badge.svg?branch=master)
 
 [![codecov](https://codecov.io/gh/UBC-MDS/ggexpress/branch/master/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/ggexpress)
 <!-- badges: end -->
@@ -83,23 +82,23 @@ through of package functions.
 [ggplot2 (v3.2.1 or higher)](https://ggplot2.tidyverse.org) <br> [stats
 (v3.6.1 or
 higher)](https://www.rdocumentation.org/packages/stats/versions/3.6.2)
-<br> [tidyr (v1.0.0)](https://tidyr.tidyverse.org) [Hmise (v4.3 or
+<br> [tidyr (v1.0.0)](https://tidyr.tidyverse.org) <br> [Hmise (v4.3 or
 higher)](https://www.rdocumentation.org/packages/Hmisc/versions/4.3-1)
-[forecast
+<br> [forecast
 (v8.11)](https://cran.r-project.org/web/packages/forecast/index.html)
-[rlang
-(v0.4.5)](https://cran.r-project.org/web/packages/rlang/index.html)
+<br> [rlang
+(v0.4.5)](https://cran.r-project.org/web/packages/rlang/index.html) <br>
 [magrittr
 (v1.5)](https://cran.r-project.org/web/packages/magrittr/index.html)
-[tibble
+<br> [tibble
 (v2.1.3)](https://cran.r-project.org/web/packages/tibble/index.html)
-[vdiffr
+<br> [vdiffr
 (v0.3.1)](https://cran.r-project.org/web/packages/vdiffr/index.html)
-[testthat
+<br> [testthat
 (v2.3.3)](https://cran.r-project.org/web/packages/testthat/index.html)
-[readr
+<br> [readr
 (v1.3.1)](https://cran.r-project.org/web/packages/readr/readme/README.html)
-[gapminder
+<br> [gapminder
 (v0.3.0)](https://cran.r-project.org/web/packages/gapminder/README.html)
 
 ### How this package fits into the R ecosytem
