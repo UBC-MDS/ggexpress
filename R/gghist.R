@@ -14,6 +14,7 @@
 #' @importFrom ggplot2 annotate
 #' @importFrom ggplot2 aes
 #' @importFrom ggplot2 ggplot_build
+#' @importFrom ggplot2 theme_bw
 #'
 #' @examples
 #' gghist(iris, Sepal.Length)
@@ -68,7 +69,8 @@ gghist <- function(data, variable) {
              x = annotation_x,
              y = (y_max*0.7),
              label = paste("Standard Deviation is:", round(variable_sd, 2)),
-             color = "black")
+             color = "black") +
+    theme_bw()
 
 }
 
