@@ -59,7 +59,14 @@
   </ul>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/UBC-MDS/ggexpress">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -87,6 +94,16 @@
 <span id="cb1-2"><a href="#cb1-2"></a>devtools<span class="op">::</span><span class="kw"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"UBC-MDS/ggexpress"</span>)</span></code></pre></div>
 </div>
 </div>
+<div id="package-developers" class="section level1">
+<h1 class="hasAnchor">
+<a href="#package-developers" class="anchor"></a>Package Developers</h1>
+<ul>
+<li><p>Jack Tan</p></li>
+<li><p><a href="https://github.com/aromatic-toast">Lesley Miller</a></p></li>
+<li><p>Tejas Phaterpekar</p></li>
+<li><p>Wenjiao Zou</p></li>
+</ul>
+</div>
 <div id="package-vignette" class="section level1">
 <h1 class="hasAnchor">
 <a href="#package-vignette" class="anchor"></a>Package Vignette</h1>
@@ -111,19 +128,21 @@
 <div id="dependencies" class="section level3">
 <h3 class="hasAnchor">
 <a href="#dependencies" class="anchor"></a>Dependencies</h3>
-<p><a href="https://ggplot2.tidyverse.org">ggplot2 (v3.2.1 or higher)</a> <br><a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2">stats (v3.6.1 or higher)</a> <br><a href="https://tidyr.tidyverse.org">tidyr (v1.0.0)</a></p>
+<p><a href="https://ggplot2.tidyverse.org">ggplot2 (v3.2.1 or higher)</a> <br><a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2">stats (v3.6.1 or higher)</a> <br><a href="https://tidyr.tidyverse.org">tidyr (v1.0.0)</a> <br><a href="https://www.rdocumentation.org/packages/Hmisc/versions/4.3-1">Hmise (v4.3 or higher)</a> <br><a href="https://cran.r-project.org/web/packages/forecast/index.html">forecast (v8.11)</a> <br><a href="https://cran.r-project.org/web/packages/rlang/index.html">rlang (v0.4.5)</a> <br><a href="https://cran.r-project.org/web/packages/magrittr/index.html">magrittr (v1.5)</a> <br><a href="https://cran.r-project.org/web/packages/tibble/index.html">tibble (v2.1.3)</a> <br><a href="https://cran.r-project.org/web/packages/vdiffr/index.html">vdiffr (v0.3.1)</a> <br><a href="https://cran.r-project.org/web/packages/testthat/index.html">testthat (v2.3.3)</a> <br><a href="https://cran.r-project.org/web/packages/readr/readme/README.html">readr (v1.3.1)</a> <br><a href="https://cran.r-project.org/web/packages/gapminder/README.html">gapminder (v0.3.0)</a></p>
 </div>
 <div id="how-this-package-fits-into-the-r-ecosytem" class="section level3">
 <h3 class="hasAnchor">
 <a href="#how-this-package-fits-into-the-r-ecosytem" class="anchor"></a>How this package fits into the R ecosytem</h3>
 <ul>
-<li>Though the package is not ‘new’ from a technical perspective, it does provide convenience to the user when needing to perform exploratory data analysis. There are many more universal summary packages out there, such as <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html">pandas.DataFrame.describe()</a> for python and <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/summary">summary</a> for R). <code>ggexpress</code> combines both analysis and visual representation of the data for complex graphics like Fourier transform and general plotting taks (i.e. histogram).</li>
+<li>Though the package is not ‘new’ from a technical perspective, it does provide convenience to the user when needing to perform exploratory data analysis. There are many more universal summary packages out there, such as <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html">pandas.DataFrame.describe()</a> for python and <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/summary">summary</a> for R). <code>ggexpress</code> combines both analysis and visual representation of the data for complex graphics like Fourier transform and general plotting tasks (i.e. histogram).</li>
 </ul>
 </div>
 <div id="code-examples" class="section level2">
 <h2 class="hasAnchor">
 <a href="#code-examples" class="anchor"></a>Code Examples</h2>
-<p>This is a basic example of how to make an exploratory histogram that displays summary stastics about the variable.</p>
+<blockquote>
+<p>This is a basic example of how to make an exploratory histogram that displays summary statistics about the variable.</p>
+</blockquote>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(ggexpress)</span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="co">## basic example code</span></span>
 <span id="cb2-3"><a href="#cb2-3"></a></span>
@@ -131,30 +150,55 @@
 <span id="cb2-5"><a href="#cb2-5"></a><span class="kw"><a href="reference/gghist.html">gghist</a></span>(<span class="dt">data =</span> iris, <span class="dt">variable =</span> Sepal.Length)</span>
 <span id="cb2-6"><a href="#cb2-6"></a><span class="co">#&gt; `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</span></span>
 <span id="cb2-7"><a href="#cb2-7"></a><span class="co">#&gt; `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</span></span></code></pre></div>
-<p><img src="reference/figures/README-example%201-1.png" width="100%"></p>
+<p><img src="reference/figures/README-example1-1.png" width="80%" height="80%" style="display: block; margin: auto;"></p>
+<blockquote>
 <p>Creates a scatterplot and calculates correlation values for two numeric variables</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw"><a href="reference/scatter_express.html">scatter_express</a></span>(<span class="dt">df =</span> iris, <span class="dt">xval =</span> Sepal.Width, <span class="dt">yval =</span> Sepal.Length)</span></code></pre></div>
-<p><img src="reference/figures/README-example%202-1.png" width="100%"></p>
+</blockquote>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(ggexpress)</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="kw"><a href="reference/scatter_express.html">scatter_express</a></span>(<span class="dt">df =</span> iris, <span class="dt">xval =</span> Sepal.Width, <span class="dt">yval =</span> Sepal.Length)</span></code></pre></div>
+<p><img src="reference/figures/README-example2-1.png" width="80%" height="80%" style="display: block; margin: auto;"></p>
+<blockquote>
 <p>Plots a time series and its decomposed components</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>time &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"1950 Q1"</span>, <span class="st">"1950 Q2"</span>, <span class="st">"1950 Q3"</span>, <span class="st">"1950 Q4"</span>, </span>
-<span id="cb4-2"><a href="#cb4-2"></a>           <span class="st">"1951 Q1"</span>, <span class="st">"1951 Q2"</span>, <span class="st">"1951 Q3"</span>, <span class="st">"1951 Q4"</span>,</span>
-<span id="cb4-3"><a href="#cb4-3"></a>           <span class="st">"1952 Q1"</span>, <span class="st">"1952 Q2"</span>, <span class="st">"1952 Q3"</span>, <span class="st">"1952 Q4"</span>)</span>
-<span id="cb4-4"><a href="#cb4-4"></a>earnings &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">0.71</span>, <span class="fl">0.63</span>, <span class="fl">0.82</span>, <span class="fl">0.21</span>, </span>
-<span id="cb4-5"><a href="#cb4-5"></a>              <span class="fl">1.21</span>, <span class="fl">1.03</span>, <span class="fl">2.82</span>, <span class="fl">0.51</span>,</span>
-<span id="cb4-6"><a href="#cb4-6"></a>              <span class="fl">0.79</span>, <span class="fl">0.92</span>, <span class="fl">1.06</span>, <span class="fl">0.41</span>)</span>
-<span id="cb4-7"><a href="#cb4-7"></a> ts_data &lt;-<span class="st"> </span>tibble<span class="op">::</span><span class="kw"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span>(time, earnings)</span>
-<span id="cb4-8"><a href="#cb4-8"></a> <span class="kw"><a href="reference/ts_plot.html">ts_plot</a></span>(<span class="dt">data=</span>ts_data, <span class="dt">col=</span><span class="st">"earnings"</span>, <span class="dt">frequency=</span><span class="dv">4</span>)</span>
-<span id="cb4-9"><a href="#cb4-9"></a><span class="co">#&gt; Registered S3 method overwritten by 'quantmod':</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a><span class="co">#&gt;   method            from</span></span>
-<span id="cb4-11"><a href="#cb4-11"></a><span class="co">#&gt;   as.zoo.data.frame zoo</span></span></code></pre></div>
-<p><img src="reference/figures/README-ts_plot%20example-1.png" width="100%"></p>
+</blockquote>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(ggexpress)</span>
+<span id="cb4-2"><a href="#cb4-2"></a>time &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"1950 Q1"</span>, <span class="st">"1950 Q2"</span>, <span class="st">"1950 Q3"</span>, <span class="st">"1950 Q4"</span>, </span>
+<span id="cb4-3"><a href="#cb4-3"></a>           <span class="st">"1951 Q1"</span>, <span class="st">"1951 Q2"</span>, <span class="st">"1951 Q3"</span>, <span class="st">"1951 Q4"</span>,</span>
+<span id="cb4-4"><a href="#cb4-4"></a>           <span class="st">"1952 Q1"</span>, <span class="st">"1952 Q2"</span>, <span class="st">"1952 Q3"</span>, <span class="st">"1952 Q4"</span>)</span>
+<span id="cb4-5"><a href="#cb4-5"></a>earnings &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">0.71</span>, <span class="fl">0.63</span>, <span class="fl">0.82</span>, <span class="fl">0.21</span>, </span>
+<span id="cb4-6"><a href="#cb4-6"></a>              <span class="fl">1.21</span>, <span class="fl">1.03</span>, <span class="fl">2.82</span>, <span class="fl">0.51</span>,</span>
+<span id="cb4-7"><a href="#cb4-7"></a>              <span class="fl">0.79</span>, <span class="fl">0.92</span>, <span class="fl">1.06</span>, <span class="fl">0.41</span>)</span>
+<span id="cb4-8"><a href="#cb4-8"></a> ts_data &lt;-<span class="st"> </span>tibble<span class="op">::</span><span class="kw"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span>(time, earnings)</span>
+<span id="cb4-9"><a href="#cb4-9"></a> <span class="kw"><a href="reference/ts_plot.html">ts_plot</a></span>(<span class="dt">data =</span> ts_data, <span class="dt">col =</span> <span class="st">"earnings"</span>, <span class="dt">frequency =</span> <span class="dv">4</span>)</span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="co">#&gt; Registered S3 method overwritten by 'quantmod':</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="co">#&gt;   method            from</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="co">#&gt;   as.zoo.data.frame zoo</span></span></code></pre></div>
+<p><img src="reference/figures/README-ts_plot_example-1.png" width="80%" height="80%" style="display: block; margin: auto;"></p>
+<blockquote>
+<p>This example displays a fourier transform given some simple input data.</p>
+</blockquote>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(ggexpress)</span>
+<span id="cb5-2"><a href="#cb5-2"></a>my_data =<span class="st"> </span>tibble<span class="op">::</span><span class="kw"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span>(<span class="dt">time_series =</span>  <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="dt">signal =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">6</span>))</span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="kw"><a href="reference/fourier_transform.html">fourier_transform</a></span>(<span class="dt">data =</span> my_data,</span>
+<span id="cb5-5"><a href="#cb5-5"></a>                  <span class="dt">time_col =</span> <span class="st">"time_series"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6"></a>                  <span class="dt">data_col =</span> <span class="st">"signal"</span>)</span></code></pre></div>
+<p><img src="reference/figures/README-fourier_transform%20example-1.png" width="80%" height="80%" style="display: block; margin: auto;"></p>
 </div>
 </div>
 
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <div class="license">
+    <div class="links">
+<h2>Links</h2>
+<ul class="list-unstyled">
+<li>Browse source code at <br><a href="https://github.com/UBC-MDS/ggexpress">https://​github.com/​UBC-MDS/​ggexpress</a>
+</li>
+<li>Report a bug at <br><a href="https://github.com/UBC-MDS/ggexpress/issues">https://​github.com/​UBC-MDS/​ggexpress/​issues</a>
+</li>
+</ul>
+</div>
+<div class="license">
 <h2>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
