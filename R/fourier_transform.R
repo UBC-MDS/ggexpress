@@ -1,6 +1,6 @@
-import(testthat)
-import(gglot2)
-import(dplyr)
+library(testthat)
+library(gglot2)
+library(dplyr)
 
 #' Creates a Fourier transform plot of the data specified in the 'data_col' column using ggplot2
 #'
