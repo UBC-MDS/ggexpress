@@ -1,7 +1,3 @@
-library(testthat)
-library(gglot2)
-library(dplyr)
-
 #' Creates a Fourier transform plot of the data specified in the 'data_col' column using ggplot2
 #'
 #' @param data DataFrame containing all necessary information
