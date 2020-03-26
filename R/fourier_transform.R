@@ -1,7 +1,3 @@
-library(testthat)
-library(ggplot2)
-library(dplyr)
-
 #' Creates a Fourier transform plot of the data specified in the 'data_col' column using ggplot2
 #'
 #' @param data DataFrame containing all necessary information
@@ -40,23 +36,30 @@ fourier_transform <- function(data, time_col, data_col) {
   testthat::test_that('`NaN` values found in time column!', {
     testthat::expect_equal(my_time, my_time[!is.na(my_time)])
   })
-
+  
+  # Testing that input data is of correct format
   sampling_freq <- my_time[2] - my_time[1]
   for (n in 1:(length(my_time) - 1)) {
+    # Expect that each time step is uniform
     testthat::test_that('Sampling time is not uniformly distributed! Assure that time between samples is constant!', {
       testthat::expect_equal((my_time[n + 1] - my_time[n]), sampling_freq, tolerance = 1e-2)
     })
   }
 
-  amplitudes <- abs(fft(my_signal)[1:((length(my_time)/2)+1)])
+  # Using fft function to calculate the amplitudes at different frequencies
+  amplitudes <- abs(stats::fft(my_signal)[1:((length(my_time)/2)+1)])
+  # Calculating the frequency values
   frequencies <- seq(from=0, to=1/(2*sampling_freq), length=((length(my_time)/2)))
 
+  # Depending on whether or not the input data length is even/odd there may be difference of 1 in length
   if (length(amplitudes) > length(frequencies)) {
     amplitudes <- head(amplitudes, -1)
   }
-
+  
+  # Putting results in tibble
   my_df <- tibble::tibble(`Frequency` = frequencies, `Amplitude` = amplitudes)
 
+  # Plotting
   my_plot <- ggplot2::ggplot(data = my_df) +
     ggplot2::geom_line(aes(x = Frequency, y = Amplitude)) +
     ggplot2::ggtitle('FFT on Input Signal Data')
