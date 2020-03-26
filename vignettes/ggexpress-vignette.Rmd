@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(ggexpress)
 ```
-When conducting Exploratory Data Analysis it is useful to plot the variables in the data to get an intial sense of the distribution and potential behaviour of the data. If the dataset contains many variables creating separate plots for each one could become tedious. This package automates the plot configuration process and generates basic graphics that summarize the data. 
+When conducting Exploratory Data Analysis it is useful to plot the variables in the data to get an initial sense of the distribution and potential behaviour of the data. If the dataset contains many variables creating separate plots for each one could become tedious. This package automates the plot configuration process and generates basic graphics that summarize the data. 
 
 This package contains 4 functions; two for general purpose exploratory tasks and two that are more specific. 
 
@@ -48,7 +48,7 @@ gapminder::gapminder
 
 >This plot displays the position of the mean and median of life expectancy from the gapminder dataset. In addition, the plot also displays the value of the mean, median and standard deviation. 
 
-```{r gghist_lifeExp, fig.align='center', fig.width=6, fig.height=4}
+```{r gghist_lifeExp, fig.align='center', fig.width=7, fig.height=4}
 gghist(data = gapminder, variable = lifeExp)
 ```
 
@@ -60,7 +60,7 @@ gghist(data = gapminder, variable = gdpPercap)
 
 ### Obtain a scatterplot with scatter_express()
 
-> The `scatter_express()` returns a basic scatterplot but also returns the correlation coefficient between the two variables. 
+> The `scatter_express()` returns a basic scatterplot but also returns the correlation coefficient between the two variables. The plot below shows the relationship between petal length and petal width in iris flowers. 
 
 ```{r scatter_iris, fig.align='center', fig.width=6, fig.height=4}
 scatter_express(df = iris, 
@@ -68,23 +68,32 @@ scatter_express(df = iris,
                 yval = Petal.Width)
 ```
 
-> In addition, scatter_express() provides the option display the data on a log transformed scale for data with non-linear relationships. 
+> In addition, scatter_express() provides the option display the data on a log transformed scale for data with non-linear relationships. The first plot displays the GDP per capita vs the life expectancy before before log transformation. 
+
+```{r non-log, fig.align='center', fig.width=6, fig.height=4}
+scatter_express(df = gapminder,
+                xval = gdpPercap, 
+                yval = lifeExp)
+
+```
+
+> Once the log tranform is applied, a linear trend beetween GDP per capita and life expectancy becomes more apparent. 
 
 ```{r log, fig.align='center', fig.width=6, fig.height=4}
-scatter_express(df = iris, 
-                xval = Sepal.Length, 
-                yval = Sepal.Width,
+scatter_express(df = gapminder,
+                xval = gdpPercap, 
+                yval = lifeExp,
                 x_transform = TRUE,
                 y_transform = TRUE)
 
 ```
 
 
-### Time Series with ts_plot()
+### Time Series Decomposition with ts_plot()
 > This function, ts_plot(), is able to take in a time stamped dataframe and convert it into a time series object. The time series is then decomposed into its trend, seasonsal and white noise components. 
 
 ```{r ts_plot, fig.align='center', fig.width=6, fig.height=4}
- 
+# sample data
 time <- c("1950 Q1", "1950 Q2", "1950 Q3", "1950 Q4", 
           "1951 Q1", "1951 Q2", "1951 Q3", "1951 Q4",
           "1952 Q1", "1952 Q2", "1952 Q3", "1952 Q4")
@@ -94,4 +103,17 @@ time <- c("1950 Q1", "1950 Q2", "1950 Q3", "1950 Q4",
 ts_data <- tibble::tibble(time, earnings)
 
 ts_plot(ts_data, "earnings", 4)
- ```
+```
+ 
+### Fourier Transform plot with fourier_transform()
+```{r fourier_transform, fig.align='center', fig.width=6, fig.height=4}
+# sample data
+my_data = tibble::tibble(time_series =  c(0, 1, 2, 3), signal = c(2, 3, 4, 6))
+
+fourier_transform(data = my_data,
+                  time_col = "time_series",
+                  data_col = "signal")
+
+```
+
+ 
