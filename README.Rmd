@@ -94,7 +94,7 @@ Go [here](https://ubc-mds.github.io/ggexpress/) to see step by step walk through
 
 ## Code Examples
 
-> This is a basic example of how to make an exploratory histogram that displays summary statistics about the variable. 
+> This is a basic example of how to make an exploratory histogram that displays summary statistics about the variable. You can find the details about `iris` dataset used in this example here: [iris](https://gist.githubusercontent.com/curran/a08a1080b88344b0c8a7/raw/639388c2cbc2120a14dcf466e85730eb8be498bb/iris.csv)
 
 ```{r example1}
 library(ggexpress)
