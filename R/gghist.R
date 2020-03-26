@@ -14,6 +14,7 @@
 #' @importFrom ggplot2 annotate
 #' @importFrom ggplot2 aes
 #' @importFrom ggplot2 ggplot_build
+#' @importFrom ggplot2 theme_bw
 #'
 #' @examples
 #' gghist(iris, Sepal.Length)
@@ -26,8 +27,15 @@ gghist <- function(data, variable) {
     stop("Data must be of type tibble or data.frame")
   }
 
+
+
   # extract the variable
   v <- dplyr::select({{data}}, {{variable}}) %>% dplyr::pull()
+
+  # check that variable is numeric continuous
+  if (!class(v) %in% c('numeric', 'integer')) {
+    stop("Variable must be of type numeric and continuous.")
+  }
 
 
   # get the variable statistics
@@ -68,7 +76,8 @@ gghist <- function(data, variable) {
              x = annotation_x,
              y = (y_max*0.7),
              label = paste("Standard Deviation is:", round(variable_sd, 2)),
-             color = "black")
+             color = "black") +
+    theme_bw()
 
 }
 

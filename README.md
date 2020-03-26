@@ -5,7 +5,8 @@
 
 <!-- badges: start -->
 
-![R-CMD-check](https://github.com/UBC-MDS/ggexpress/workflows/R-CMD-check/badge.svg?branch=master)
+[![R build
+status](https://github.com/UBC-MDS/ggexpress/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/ggexpress/actions)
 
 [![codecov](https://codecov.io/gh/UBC-MDS/ggexpress/branch/master/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/ggexpress)
 <!-- badges: end -->
@@ -82,23 +83,23 @@ through of package functions.
 [ggplot2 (v3.2.1 or higher)](https://ggplot2.tidyverse.org) <br> [stats
 (v3.6.1 or
 higher)](https://www.rdocumentation.org/packages/stats/versions/3.6.2)
-<br> [tidyr (v1.0.0)](https://tidyr.tidyverse.org) [Hmise (v4.3 or
+<br> [tidyr (v1.0.0)](https://tidyr.tidyverse.org) <br> [Hmise (v4.3 or
 higher)](https://www.rdocumentation.org/packages/Hmisc/versions/4.3-1)
-[forecast
+<br> [forecast
 (v8.11)](https://cran.r-project.org/web/packages/forecast/index.html)
-[rlang
-(v0.4.5)](https://cran.r-project.org/web/packages/rlang/index.html)
+<br> [rlang
+(v0.4.5)](https://cran.r-project.org/web/packages/rlang/index.html) <br>
 [magrittr
 (v1.5)](https://cran.r-project.org/web/packages/magrittr/index.html)
-[tibble
+<br> [tibble
 (v2.1.3)](https://cran.r-project.org/web/packages/tibble/index.html)
-[vdiffr
+<br> [vdiffr
 (v0.3.1)](https://cran.r-project.org/web/packages/vdiffr/index.html)
-[testthat
+<br> [testthat
 (v2.3.3)](https://cran.r-project.org/web/packages/testthat/index.html)
-[readr
+<br> [readr
 (v1.3.1)](https://cran.r-project.org/web/packages/readr/readme/README.html)
-[gapminder
+<br> [gapminder
 (v0.3.0)](https://cran.r-project.org/web/packages/gapminder/README.html)
 
 ### How this package fits into the R ecosytem
@@ -112,12 +113,12 @@ higher)](https://www.rdocumentation.org/packages/Hmisc/versions/4.3-1)
     [summary](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/summary)
     for R). `ggexpress` combines both analysis and visual representation
     of the data for complex graphics like Fourier transform and general
-    plotting taks (i.e. histogram).
+    plotting tasks (i.e. histogram).
 
 ## Code Examples
 
-This is a basic example of how to make an exploratory histogram that
-displays summary stastics about the variable.
+> This is a basic example of how to make an exploratory histogram that
+> displays summary statistics about the variable.
 
 ``` r
 library(ggexpress)
@@ -129,20 +130,22 @@ gghist(data = iris, variable = Sepal.Length)
 #> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-<img src="man/figures/README-example1-1.png" width="100%" />
+<img src="man/figures/README-example1-1.png" width="80%" height="80%" style="display: block; margin: auto;" />
 
-Creates a scatterplot and calculates correlation values for two numeric
-variables
+> Creates a scatterplot and calculates correlation values for two
+> numeric variables
 
 ``` r
+library(ggexpress)
 scatter_express(df = iris, xval = Sepal.Width, yval = Sepal.Length)
 ```
 
-<img src="man/figures/README-example2-1.png" width="100%" />
+<img src="man/figures/README-example2-1.png" width="80%" height="80%" style="display: block; margin: auto;" />
 
-Plots a time series and its decomposed components
+> Plots a time series and its decomposed components
 
 ``` r
+library(ggexpress)
 time <- c("1950 Q1", "1950 Q2", "1950 Q3", "1950 Q4", 
            "1951 Q1", "1951 Q2", "1951 Q3", "1951 Q4",
            "1952 Q1", "1952 Q2", "1952 Q3", "1952 Q4")
@@ -150,10 +153,24 @@ earnings <- c(0.71, 0.63, 0.82, 0.21,
               1.21, 1.03, 2.82, 0.51,
               0.79, 0.92, 1.06, 0.41)
  ts_data <- tibble::tibble(time, earnings)
- ts_plot(data=ts_data, col="earnings", frequency=4)
+ ts_plot(data = ts_data, col = "earnings", frequency = 4)
 #> Registered S3 method overwritten by 'quantmod':
 #>   method            from
 #>   as.zoo.data.frame zoo
 ```
 
-<img src="man/figures/README-ts_plot_example-1.png" width="100%" />
+<img src="man/figures/README-ts_plot_example-1.png" width="80%" height="80%" style="display: block; margin: auto;" />
+
+> This example displays a fourier transform given some simple input
+> data.
+
+``` r
+library(ggexpress)
+my_data = tibble::tibble(time_series =  c(0, 1, 2, 3), signal = c(2, 3, 4, 6))
+
+fourier_transform(data = my_data,
+                  time_col = "time_series",
+                  data_col = "signal")
+```
+
+<img src="man/figures/README-fourier_transform example-1.png" width="80%" height="80%" style="display: block; margin: auto;" />

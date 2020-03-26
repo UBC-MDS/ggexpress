@@ -35,9 +35,20 @@ iris_plot <- iris %>%
            label = paste("Standard Deviation is:", round(sd_length, 2)),
            color = "black")
 
+
 testthat::test_that("Output is of correct datatype.", {
 
   testthat::expect_identical(class(gghist(iris, Sepal.Length)), class(iris_plot))
+
+})
+
+testthat::test_that("Check that exception is raised when data is of incorrect type.", {
+  testthat::expect_error(gghist(iris$Sepal.Length, Sepal.Length))
+
+})
+
+testthat::test_that("Check that exception is raised when variable is not continuous.", {
+  testthat::expect_error(gghist(iris, species))
 
 })
 
