@@ -93,8 +93,6 @@ higher)](https://www.rdocumentation.org/packages/Hmisc/versions/4.3-1)
 (v1.5)](https://cran.r-project.org/web/packages/magrittr/index.html)
 <br> [tibble
 (v2.1.3)](https://cran.r-project.org/web/packages/tibble/index.html)
-<br> [vdiffr
-(v0.3.1)](https://cran.r-project.org/web/packages/vdiffr/index.html)
 <br> [testthat
 (v2.3.3)](https://cran.r-project.org/web/packages/testthat/index.html)
 <br> [readr
